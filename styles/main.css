@@ -513,6 +513,10 @@ button[aria-label]::before {
   max-height: 2.8125rem;
   background-color: var(--color-light);
 }
+.button-circle__light.is-active {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
 .button-circle__green {
   border-radius: 50%;
   padding: 1rem 0.875rem;
@@ -523,7 +527,7 @@ button[aria-label]::before {
   max-height: 2.8125rem;
   background-color: var(--color-light);
 }
-.button-circle__green:not(.is-active) {
+.button-circle__green.is-active {
   background-color: var(--color-primary);
   color: var(--color-light);
 }
@@ -1017,6 +1021,11 @@ button[aria-label]::before {
   width: 55%;
 }
 
+@media (width <= 47.99875rem) {
+  .hero__main {
+    padding-inline: 0;
+  }
+}
 .hero__body {
   display: grid;
   grid-template-columns: 65% 1fr;
@@ -1041,6 +1050,8 @@ button[aria-label]::before {
 @media (width <= 47.99875rem) {
   .hero__body {
     grid-template-rows: 1fr;
+    padding-top: 0;
+    padding-bottom: 1.5rem;
   }
 }
 .hero__advantages {
@@ -1313,8 +1324,9 @@ button[aria-label]::before {
 }
 @media (width <= 47.99875rem) {
   .hero__card--first {
+    border-radius: 0;
     padding-block: 2.5rem;
-    padding-inline: 1.875rem;
+    padding-inline: 0.875rem;
   }
 }
 .hero__card--second {
@@ -1376,6 +1388,7 @@ button[aria-label]::before {
 @media (width <= 47.99875rem) {
   .section__categories-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 }
 .section__categories-main {
@@ -1746,6 +1759,7 @@ button[aria-label]::before {
 
 .section__extra-hot-inner {
   padding-block: 3.75rem;
+  padding-inline: 0;
 }
 
 .card-hot-deals__wrapper {
@@ -1753,6 +1767,11 @@ button[aria-label]::before {
   width: 100%;
   min-height: 22.375rem;
   border-radius: 0.625rem;
+}
+@media (width <= 47.99875rem) {
+  .card-hot-deals__wrapper {
+    border-radius: 0;
+  }
 }
 .card-hot-deals__list {
   display: flex;
@@ -1938,14 +1957,27 @@ button[aria-label]::before {
 }
 
 .feedback__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
   column-gap: 1.5rem;
   row-gap: 1.5rem;
 }
+@media (width <= 90.06125rem) {
+  .feedback__list {
+    flex-direction: column;
+    max-height: 36rem;
+  }
+}
 @media (width <= 63.99875rem) {
   .feedback__list {
-    grid-template-columns: 1fr;
+    min-height: 39rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .feedback__list {
+    min-height: 43rem;
   }
 }
 .feedback__item {
@@ -1954,8 +1986,25 @@ button[aria-label]::before {
   padding-inline: 1.5rem;
   padding-bottom: 1.5rem;
   padding-top: 2.5rem;
+  min-width: 26.25rem;
   position: relative;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-duration);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+.feedback__item.is-active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  pointer-events: auto;
+}
+@media (width <= 31.31125rem) {
+  .feedback__item {
+    min-width: 12.5rem;
+  }
 }
 .feedback__item::before {
   position: absolute;

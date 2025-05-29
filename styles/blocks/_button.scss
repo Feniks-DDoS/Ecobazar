@@ -19,6 +19,11 @@
         max-width: rem(45);
         max-height: rem(45);
         background-color: var(--color-light);
+
+          &.is-active {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+        }
     }
 
     &-circle__green {
@@ -31,11 +36,12 @@
         max-height: rem(45);
         background-color: var(--color-light);
 
-        &:not(.is-active) {
+          &.is-active {
             background-color: var(--color-primary);
             color: var(--color-light);
         }
     }
+
 
   
 

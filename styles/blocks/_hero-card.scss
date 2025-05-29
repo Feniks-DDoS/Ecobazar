@@ -77,8 +77,9 @@
             background: url(../../images/hero/1.jpg) center/cover no-repeat;
             }
             @include mobile {
+                border-radius: 0;
                 padding-block: rem(40);
-                padding-inline: rem(30);
+                padding-inline: rem(14);
             }
         }
 
