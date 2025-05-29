@@ -1,0 +1,53 @@
+@use '../helpers' as *;
+
+.promo {
+    &__list {
+        display: flex;
+        column-gap: rem(10);
+    }
+
+
+    &__item {
+        display: flex;
+
+        &:not(:last-child)::after {
+        content: "/";
+        margin-left: rem(10);
+        }
+
+        &:first-child::after {
+            content: "";
+        }
+
+         &:nth-child(-n + 2)::after {
+            content: "|";
+            margin-left: rem(10);
+        }
+    }
+
+    &__link {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            border-bottom: rem(1) solid var(--color-primary);
+            height: rem(2);
+            width: 0;
+            transition: var(--transition-duration);
+        }
+
+        @include hover {
+            color: var(--color-primary);
+        }
+
+        @include hover {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    
+}

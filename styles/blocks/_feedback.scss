@@ -1,0 +1,55 @@
+@use '../helpers' as *;
+
+
+.feedback {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: rem(24);
+        row-gap: rem(24);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        background-color: var(--color-light);
+        border-radius: rem(8);
+        padding-inline: rem(24);
+        padding-bottom: rem(24);
+        padding-top: rem(40);
+        position: relative;
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.01);
+
+
+        &::before {
+            @include abs-y;
+            content: "";
+            top: rem(24);
+            left: rem(24);
+            width: rem(32);
+            height: rem(26);
+            background: url(../../icons/client-reviews/1.svg) center/contain no-repeat;
+        }
+    }
+
+
+    &__card {
+
+        &-info {
+            padding-block: rem(16);
+            color: var(--color-gray-700);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        &-description {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: rem(10);
+        }
+    }
+}

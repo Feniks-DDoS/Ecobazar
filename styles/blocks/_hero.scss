@@ -1,0 +1,82 @@
+@use '../helpers' as *;
+
+.hero {
+    &__body {
+        display: grid;
+        grid-template-columns: 65% 1fr;
+        grid-template-rows: repeat(2 , 1fr);
+        align-items: center;
+        justify-content: start;
+        row-gap: rem(24);
+        column-gap: rem(24);
+        padding-block: rem(24);
+
+
+        @include laptop {
+         justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+            grid-template-rows: 1fr;
+    }
+}
+
+   
+
+    &__advantages {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: rem(5);
+        padding-block: rem(40);
+        padding-inline: rem(40);
+        border-radius: rem(8);
+        box-shadow: 0px 8px 40px 0px rgba(0, 38, 3, 0.08);
+
+        @include tablet {
+            grid-template-columns: repeat(2 , 1fr);
+            row-gap: 1rem;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+
+
+        &-title {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        &-subtitle {
+            color: var(--color-gray-400);
+            font-weight: 400;
+        }
+
+        &-card {
+            display: flex;
+            align-items: center;
+            column-gap: rem(16);
+            padding: rem(16) rem(28);
+            border: rem(1) solid var(--color-primary);
+            border-radius: rem(10);
+        box-shadow: 0px 8px 40px 0px rgba(13, 187, 28, 0.268);
+        transition: var(--transition-duration);
+
+        @include hover {
+            color: var(--color-light);
+            background-color: var(--color-green-dark);
+        }
+        }
+
+        &-info {    
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(8);
+        }
+    }
+}

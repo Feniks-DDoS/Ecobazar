@@ -1,0 +1,55 @@
+@use '../helpers' as *;
+
+.section {
+    padding-top: rem(60);
+    &__header {
+        padding-bottom: rem(32);
+        &-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            &--customer {
+                display: flex;
+                flex-direction: column-reverse;
+                row-gap: rem(60);
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &-title {
+            font-weight: 600;
+        }
+
+        &-link {
+            color: var(--color-primary);
+            position: relative;
+            font-weight: 500;
+            padding-right: rem(12);
+
+            &::after {
+                @include abs-y;
+                left: 90%;
+                content: "";
+                background: url(../../icons/left-arrow-green.svg) center/contain no-repeat;
+                width: rem(15);
+                height: rem(12);
+                transition: var(--transition-duration);
+            }
+
+            @include hover {
+                &::after {
+                    left: 95%;
+                }
+            }
+        }
+    }
+}

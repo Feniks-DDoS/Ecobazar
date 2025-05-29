@@ -1,0 +1,51 @@
+@use '../helpers' as *;
+
+.section {
+    
+
+    &__categories-list {
+        display: grid;
+        grid-template-columns: repeat(6 , 1fr);
+        grid-template-rows: repeat(2 , 1fr);
+        gap: rem(24);
+        
+        @include tablet {
+            grid-template-columns: repeat(4 , 1fr);
+         }
+
+         @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+         }
+    }
+
+    &__categories-main {
+        padding-top: rem(16);
+    }
+
+    &__preview-title {
+        line-height: 1.5;
+        font-weight: 500;
+        transition: var(--transition-duration);
+    }
+
+    &__categories-card {
+        display: flex;
+        row-gap: rem(16);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: rem(24);
+        border: rem(1) solid  #E5E5E5;
+        border-radius: rem(10);
+        box-shadow: 0rem 0.5rem 2.5rem 0rem rgb(25 25 25 / 14%);
+        transition: var(--transition-duration);
+
+        @include hover {
+            
+            border-color: var(--color-primary);
+            .section__preview-title {
+                color: var(--color-primary);
+            }
+        }
+    }
+}

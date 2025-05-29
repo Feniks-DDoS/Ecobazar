@@ -1,0 +1,31 @@
+@use '../helpers' as *;
+
+.center {
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: rem(32);
+    }
+
+    &__link {
+        display: flex;
+        column-gap: rem(12);
+    }
+
+    &__total-info {
+        display: grid;
+        row-gap: rem(7);
+    }
+
+    &__title {
+        color: var(--color-gray-700);
+        font-weight: 400;
+        font-size: rem(14);
+    }
+
+    &__price {
+        color: var(--color-dark);
+        font-weight: 500;
+    }
+    
+}

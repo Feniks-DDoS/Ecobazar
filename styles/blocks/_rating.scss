@@ -1,0 +1,30 @@
+@use '../helpers' as *; 
+
+.rating {
+
+    &__review {
+        padding-top: rem(6);
+    display: flex;
+    }
+
+    &__feedback {
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--color-gray-500);
+        align-self: center;
+        padding-left: rem(5);
+    }
+
+    &__star {
+        --size: #{rem(20)};
+
+        @include square(var(--size));
+        
+        background: url(../../icons/gray-star.svg) center/contain no-repeat;
+
+        &.is-active {
+            background: url(../../icons/yellow-star.svg) center/contain no-repeat;
+        }
+    }
+}

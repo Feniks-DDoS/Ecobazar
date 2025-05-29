@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+
+.customer {
+
+    &__card {
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(6 , 1fr);
+            row-gap: 2rem;
+            column-gap: rem(160);
+
+            @include laptop {
+                grid-template-columns: repeat(3 , 1fr);
+            }
+
+            @include mobile {
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: rem(80);
+            }
+        }
+
+        &-item {
+            align-self: center;
+            justify-self: center;
+        }
+    }
+}

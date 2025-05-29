@@ -1,0 +1,172 @@
+@use '../helpers' as *;
+
+.card {
+
+    &-big {
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(3 , 1fr);
+            column-gap: rem(24);
+
+            @include laptop {
+                overflow-x: auto;
+            }
+        }
+
+        &__body {
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &__hot-deals-title {
+            color: var(--color-gray-500);
+            padding-top: rem(19);
+            padding-bottom: rem(6);
+            font-weight: 400;
+        }
+
+        &__title {
+            color: var(--color-light);
+            font-weight: 600;
+            padding-top: rem(16);
+            padding-bottom: rem(14);
+        }
+
+        &__info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__time {
+            display: flex;
+            font-weight: 400;
+
+            &-wrapper {
+            display: flex;
+            flex-direction: column;
+            column-gap: rem(11);
+            }
+
+            &:not(:last-child)::after {
+                content: ":";
+                margin-inline: rem(11);
+                padding-top: rem(8);
+            }
+
+            &-text {
+                font-size: rem(14);
+                line-height: 1;
+                text-transform: uppercase;
+            }
+            &-number {
+                font-size: rem(24);
+                line-height: 1.5;
+            }
+        }
+
+        &__subtitle {
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        &__item {
+            border-radius: rem(8);
+            min-height: rem(536);
+            min-width: rem(424);
+            padding-top: rem(35);
+
+            @include mobile-s {
+                min-width: rem(360) ;
+            }
+
+            &:first-child {
+            background: url(../../images/popular-product/extra1.jpg) center/cover no-repeat;
+            }
+            &:nth-child(2n) {
+            background: url(../../images/popular-product/extra2.jpg) center/cover no-repeat;
+            }
+            &:last-child {
+            background: url(../../images/popular-product/extra3.jpg) center/cover no-repeat;
+
+            .card-big__link {
+                color: var(--color-dark);
+            }
+            .card-big__title {
+                color: var(--color-dark);
+            }
+            }
+        }
+
+        &__link {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+            color: var(--color-light);
+        }
+
+        &__extra {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: rem(24);
+        }
+
+        &__description {
+
+            font-weight: 400;
+            font-size: rem(18);
+
+            &-span {
+            color:var(--color-orange);
+            font-weight: 600;
+            line-height: 1.5;
+            font-size: rem(20);
+            padding-left: rem(8);
+        }
+    }
+}
+
+    &-small {
+    padding: rem(4) rem(12);
+    font-weight: 600;
+    font-size: rem(20);
+    border-radius: rem(5);
+
+    
+    &--orange {
+        background-color: var(--color-orange);
+    }
+
+    &--red {
+        background-color: var(--color-red);
+        color: var(--color-light);
+        padding: rem(3) rem(8);
+        font-weight: 400;
+        position: absolute;
+        top: rem(16);
+        left: rem(16);
+    }
+    
+    &--blue {
+        background-color: var(--color-blue);
+        color: var(--color-light);
+        padding: rem(3) rem(8);
+        position: absolute;
+        top: rem(16);
+        left: rem(140);
+    }
+
+    &--black {
+        background-color: var(--color-dark);
+        color: #FCC900;
+        padding: rem(6) rem(12);
+        font-size: rem(18);
+    }
+    
+    }
+}

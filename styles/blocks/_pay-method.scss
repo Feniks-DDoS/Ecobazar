@@ -1,0 +1,26 @@
+@use '../helpers' as *;
+
+
+.pay-method {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        column-gap: rem(8);
+        row-gap: rem(8);
+    }
+
+    &__item {
+        padding: rem(10) ;
+        border: rem(1) solid var(--color-gray-800);
+        border-radius: rem(10);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        transition: var(--transition-duration);
+
+        @include hover {
+            border-color: var(--color-light);
+        }
+    }
+}

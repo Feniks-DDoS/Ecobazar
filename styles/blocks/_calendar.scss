@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.calendar {
+    &__number {
+        font-weight: 500;
+        color: var(--color-dark);
+        line-height: 1.5;
+        font-size: rem(20);
+    }
+
+    &__month {
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: rem(0.36);
+        font-size: rem(14);
+        color: var(--color-gray-500);
+    }
+}

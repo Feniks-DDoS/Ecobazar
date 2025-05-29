@@ -1,0 +1,40 @@
+@use "./normalize";
+@use "./fonts";
+@use "./variabels";
+@use "./utils";
+@use "./global";
+@use "./blocks/button";
+
+@use "./blocks/header";
+@use "./blocks/promo";
+@use "./blocks/header-center";
+@use "./blocks/field";
+@use "./blocks/header-overlay";
+@use "./blocks/burger-button";
+
+@use "./blocks/hero";
+@use "./blocks/card";
+@use "./blocks/hero-card";
+
+@use "./blocks/categories";
+@use "./blocks/section-header";
+@use "./blocks/popular-product";
+@use "./blocks/rating";
+
+@use "./blocks/hot-deals";
+
+@use "./blocks/news";
+@use "./blocks/calendar";
+@use "./blocks/tag";
+
+@use "./blocks/person";
+@use "./blocks/client-review";
+@use "./blocks/feedback";
+
+@use "./blocks/soc1als";
+@use "./blocks/follow";
+@use "./blocks/subcribe";
+@use "./blocks/customer";
+
+@use "./blocks/footer";
+@use "./blocks/pay-method";

@@ -1,0 +1,139 @@
+@use '../helpers' as *;
+
+
+.section {
+
+    &__bg-gray {
+        background-color: #F7F7F7;
+        padding-bottom: 0;
+    }
+
+    &__extra {
+        background-color: var(--color-light);
+    }
+
+    &__body {
+        padding-bottom: rem(60);
+    }
+
+    &__hot-deals {
+        background-color: var(--color-light);
+    }
+
+    &__hot-deals-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(8);
+    }
+
+    &__hot-deals-like,
+    &__hot-deals-eye {
+        padding: rem(13);
+        transition: var(--transition-duration);
+
+        @include hover {
+            scale: 1.1;
+        }
+    }
+
+    &__hot-deals-bag {
+        min-width: rem(371);
+    }
+
+    &__hot-deals-link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(12);
+        padding: rem(14) rem(32);
+    }
+
+    &__hot-deals-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-block: rem(25);
+        text-align: center;
+
+        &-title {
+            font-weight: 400;
+        }
+    }
+
+    &__hot-deals-price {
+            
+            padding-block: rem(8);
+            font-size: rem(24);
+            font-weight: 500;
+            color: var(--color-dark);
+    }
+
+    &__hot-deals-cross-out-price {
+        font-weight: 400;
+        color: var(--color-gray-400);
+    }
+}
+.section__extra-hot-inner {
+    padding-block: rem(60);
+}
+.card-hot-deals {
+    &__wrapper {
+        background: url(../../images/hot-deals/5.jpg) center/cover no-repeat;
+        width: 100%;
+        min-height: rem(358);
+        border-radius: rem(10);
+    }
+
+    &__list {
+        display: flex;
+        justify-content: end;
+
+        @include tablet {
+            text-align: end;
+        }
+    }
+    
+    &__item {
+        max-width: rem(441);
+        padding-block: rem(60);
+        padding-right: rem(51);
+
+        @include mobile {
+            padding-block: rem(28);
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        color: var(--color-light);
+    }
+
+    &__title {
+        color: var(--color-light);
+        font-weight: 400;
+        padding-top: rem(12);
+
+        &-span {
+            color: var(--color-orange);
+            font-weight: 600;
+        }
+    }
+    &__subtitle {
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: rem(0.32);
+    }
+
+    &__description {
+        font-weight: 400;
+        opacity: 0.7;
+        font-size: rem(16);
+        line-height: 1.5;
+        padding-top: rem(16);
+        padding-bottom: rem(28);
+    }
+}

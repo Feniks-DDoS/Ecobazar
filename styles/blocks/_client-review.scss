@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+
+.section {
+
+    &__header-button {
+        display: flex;
+        column-gap: rem(12);
+    }
+}

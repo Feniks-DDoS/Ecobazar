@@ -1,0 +1,20 @@
+@use '../helpers' as *;
+
+
+.person {
+    display: flex;
+    align-items: center;
+    column-gap: rem(12);
+
+
+    &__subtitle {
+        font-weight: 400;
+        color: var(--color-gray-400);
+        line-height: 1.5;
+    }
+
+    &__title {
+        font-weight: 500;
+        line-height: 1.5;
+    }
+}

@@ -1,0 +1,110 @@
+@use '../helpers' as *;
+
+
+.button {
+    padding: rem(16) rem(40);
+    border-radius: rem(53);
+
+
+    @include mobile {
+        padding: rem(8) rem(20);
+    }
+
+    &-circle__light {
+        border-radius: 50%;
+        padding: rem(16) rem(14);
+        border: none;
+        display: flex;
+        align-items: center;
+        max-width: rem(45);
+        max-height: rem(45);
+        background-color: var(--color-light);
+    }
+
+    &-circle__green {
+        border-radius: 50%;
+        padding: rem(16) rem(14);
+        border: none;
+        display: flex;
+        align-items: center;
+        max-width: rem(45);
+        max-height: rem(45);
+        background-color: var(--color-light);
+
+        &:not(.is-active) {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+        }
+    }
+
+  
+
+    &--green {
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        font-weight: 600;
+
+        @include hover {
+            background-color: var(--color-hard-primary);
+        }
+    }
+
+    &--transparent {
+        position: relative;
+        background-color: transparent;
+        color: var(--color-primary);
+        margin-top: rem(20);
+        padding: 0;
+        padding-right: rem(15);
+
+        &::after {
+            @include abs-y;
+            left: 100%; 
+            content: "";
+            background: url(../icons/left-arrow-green.svg) center/contain no-repeat;
+            width: rem(15);
+            height: rem(12);
+            transition: var(--transition-duration);
+        }
+
+        @include hover {
+            &::after {
+                left: 110%;
+            }
+        }
+    }
+
+    &--light {
+        background-color: var(--color-light);
+        color: var(--color-primary);
+        line-height: 1.2;
+        min-width: rem(191);
+        position: relative;
+
+
+        @include mobile {
+            min-width: rem(140);
+        }
+
+        &::after {
+            @include abs-y;
+            left: 70%; 
+            content: "";
+            background: url(../icons/left-arrow-green.svg) center/contain no-repeat;
+            width: rem(15);
+            height: rem(12);
+            transition: var(--transition-duration);
+        }
+
+        @include hover {
+            background-color: var(--color-hard-primary);
+            color: var(--color-light);
+        }
+
+        @include hover {
+            &::after {
+                left: 80%;
+            }
+        }
+    }
+}

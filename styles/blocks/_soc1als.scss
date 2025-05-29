@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.soc1als {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(8);
+    }
+
+    &__item {
+        --size: #{rem(40)};
+
+        @include square(var(--size));
+
+        padding: rem(11);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-duration);
+
+        @include hover {
+            background-color: var(--color-primary);
+
+
+            .soc1als__link {
+                color: var(--color-light);
+            }
+        }
+    }
+}

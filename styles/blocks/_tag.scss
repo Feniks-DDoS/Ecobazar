@@ -1,0 +1,27 @@
+@use '../helpers' as *;
+
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(16);
+    padding-bottom: rem(8);
+
+    @include laptop {
+        column-gap: rem(8);
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        column-gap: rem(5);
+    }
+
+    &__title {
+        font-weight: 400;
+        color: var(--color-gray-600);
+        line-height: 1.5;
+        font-size: rem(14);
+    }
+}
