@@ -7,7 +7,7 @@
     padding-top: rem(60);
 
     &__body {
-        padding-bottom: rem(60);
+        padding-bottom: fluid(60 , 20);
     }
 
     &__menu-info {
@@ -17,6 +17,10 @@
 
         @include laptop {
             margin-right: rem(50);
+        }
+
+        @include mobile {
+            margin-right: rem(0);
         }
     }
 
@@ -33,10 +37,18 @@
 
     &__menu-email {
         margin-left: rem(16);
+
+        @include mobile {
+            margin-left: rem(5);
+        }
     }
 
     &__menu-phone {
         margin-right: rem(16);
+
+        @include mobile {
+            margin-right: rem(5);
+        }
     }
 
     &__menu {

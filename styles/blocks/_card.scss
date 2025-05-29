@@ -13,11 +13,6 @@
             }
         }
 
-        &__body {
-            @include mobile {
-                display: none;
-            }
-        }
 
         &__hot-deals-title {
             color: var(--color-gray-500);
@@ -78,8 +73,15 @@
             min-width: rem(424);
             padding-top: rem(35);
 
+
+            @include mobile {
+                min-width: rem(350);
+               min-height: rem(496);
+            }
+
             @include mobile-s {
-                min-width: rem(360) ;
+               min-width: rem(296);
+               min-height: rem(416);
             }
 
             &:first-child {
