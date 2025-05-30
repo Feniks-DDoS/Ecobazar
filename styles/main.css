@@ -2555,6 +2555,16 @@ button[aria-label]::before {
     column-gap: 0.5rem;
   }
 }
+@media (width <= 63.99875rem) {
+  .quick-view__main-info {
+    max-height: 38.875rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .quick-view__main-info {
+    max-height: 36.875rem;
+  }
+}
 @media (width <= 75rem) {
   .quick-view__main-info {
     display: flex;
