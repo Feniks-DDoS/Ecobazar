@@ -1,0 +1,32 @@
+@use '../helpers' as *;
+
+
+.controls {
+    display: flex;
+    column-gap: rem(12);
+    padding-block: rem(18);
+    justify-content: center;
+    align-items: center;
+
+    @include laptop {
+        flex-direction: column;
+        row-gap: rem(8);
+        align-items: start;
+    }
+
+    &__start {
+        @include mobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: rem(8);
+        }
+    }
+
+    &__button {
+
+        @include mobile-s {
+        min-width: rem(250);
+        }
+    }
+}

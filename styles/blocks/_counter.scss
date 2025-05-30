@@ -1,0 +1,35 @@
+@use '../helpers' as *; 
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(170);
+    border: rem(1) solid  var(--color-gray-300);
+    background: var(--color-light);
+    padding: rem(8);
+
+    @include mobile-s {
+        padding: rem(8) 1rem;
+    }
+
+    &__button {
+        padding: rem(10);
+        border-radius: 50%;
+        max-width: rem(34);
+        max-height: rem(34);
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        border: none;
+        background-color: var(--color-gray-light);
+
+        @include mobile-s {
+            padding: 1rem;
+        }
+    }
+
+    &__display {
+        padding-inline: 1rem;
+    }
+}

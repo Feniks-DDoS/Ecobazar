@@ -14,7 +14,24 @@
         display: none !important;
     }
 }
+.visible-mobile {
+    
+    @include mobile-above {
+        display: none !important;
+    }
+}
 
+.hidden-mobile-s {
+    @include mobile-s {
+        display: none !important;
+    }
+}
+.visible-mobile-s {
+    
+    @include mobile-s-above {
+        display: none !important;
+    }
+}
 .hidden-tablet {
     @include tablet {
         display: none !important;
@@ -27,12 +44,7 @@
     }
 }
 
-.visible-mobile {
-    
-    @include mobile-above {
-        display: none !important;
-    }
-}
+
  .circel-icon {
       position: relative;
 
