@@ -2472,7 +2472,7 @@ button[aria-label]::before {
     align-items: start;
   }
 }
-@media (width <= 47.99875rem) {
+@media (width <= 63.99875rem) {
   .controls__start {
     display: flex;
     justify-content: space-between;
