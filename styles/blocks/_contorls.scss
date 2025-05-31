@@ -7,6 +7,7 @@
     padding-block: rem(18);
     justify-content: center;
     align-items: center;
+    border-block: rem(1) solid #E5E5E5;
 
     @include laptop {
         flex-direction: column;

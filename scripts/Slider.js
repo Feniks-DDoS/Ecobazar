@@ -45,16 +45,12 @@ class Slider {
     this.slideIndex = (this.slideIndex - 1 + this.totalSlide) % this.totalSlide
     this.onShow(this.slideIndex)
 
-    this.prevButtonElement.classList.add(this.stateClasses.isActive)
-    this.nextButtonElement.classList.remove(this.stateClasses.isActive)
   }
 
   onNextClick() {
     this.slideIndex = (this.slideIndex + 1) % this.totalSlide
     this.onShow(this.slideIndex)
 
-    this.nextButtonElement.classList.add(this.stateClasses.isActive)
-    this.prevButtonElement.classList.remove(this.stateClasses.isActive)
   }
 
   bindEvents() {

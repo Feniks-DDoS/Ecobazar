@@ -10,15 +10,18 @@
         row-gap: rem(8);
     }
 
-    &__item {
-        padding: rem(10) ;
+    &__link {
+
+        padding: rem(10);
         border: rem(1) solid var(--color-gray-800);
         border-radius: rem(10);
         align-items: center;
         display: flex;
-        justify-content: center;
+        justify-content: center;  
         transition: var(--transition-duration);
-
+        min-width: 100%;
+        min-height: 100%;
+        
         @include hover {
             border-color: var(--color-light);
         }

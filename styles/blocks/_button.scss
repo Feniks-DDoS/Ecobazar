@@ -20,7 +20,7 @@
         max-height: rem(45);
         background-color: var(--color-light);
 
-          &.is-active {
+          @include hover {
             background-color: var(--color-primary);
             color: var(--color-light);
         }
@@ -36,7 +36,7 @@
         max-height: rem(45);
         background-color: var(--color-light);
 
-          &.is-active {
+          @include hover {
             background-color: var(--color-primary);
             color: var(--color-light);
         }

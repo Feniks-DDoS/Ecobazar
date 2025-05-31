@@ -1,0 +1,176 @@
+@use '../helpers' as *; 
+
+
+.wishlist {
+
+    &__empty {
+        color: var(--color-primary);
+        font-size: rem(36);
+        font-weight: 600;
+        text-align: center;
+        padding-top: rem(30);
+    }
+    &__table {
+        display: grid;
+        grid-template-columns: repeat(4 ,1fr);
+        border: rem(1) solid var(--color-gray-100);
+        border-radius: rem(8);
+        padding: rem(16) rem(24);
+
+        @include tablet {
+            grid-template-columns: 37% 1fr;
+        }
+
+        @include mobile {
+            padding: rem(16) rem(8);
+        }
+
+    }
+
+    &__header {
+        grid-column: -1 / 1 ;
+        grid-row: 1 / 2;
+        border-bottom: rem(1) solid var(--color-gray-100);
+
+        @include tablet {
+            border-bottom: none;
+        }
+
+        
+
+        &-inner {
+            display: grid;
+            grid-template-columns: repeat(4 , 1fr);
+            align-items: start;
+            justify-content: start;
+
+              @include tablet {
+                grid-template-rows: repeat(4, 1fr); 
+                grid-template-columns: 1fr; 
+                row-gap: rem(57.6);
+        }
+        }
+
+        &-title {
+            padding-block: rem(16);
+            justify-self: start;
+            color: var(--color-gray-500);
+            font-weight: 500;
+            font-size: rem(14);
+            text-transform: uppercase;
+            letter-spacing: rem(0.42);
+
+        }
+    }
+
+    &__body {
+        grid-row: 2 / 3;
+        grid-column: -1 / 1;
+
+         @include tablet {
+            grid-column: 2 / 3;
+            grid-row: -1 / 1;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        &-inner {
+            display: grid;
+            grid-template-columns: repeat(4 , 1fr);
+            align-items: center;
+            justify-content: center;
+            padding-block: rem(12);
+        border-bottom: rem(1) solid var(--color-gray-100);
+
+         @include tablet {
+                grid-template-rows: repeat(4, 1fr); 
+                grid-template-columns: 1fr; 
+                min-width: rem(300);
+                border-bottom: none;
+
+                 &:not(:last-child) {
+            border-inline: rem(2) solid var(--color-gray-100);
+            padding-inline: rem(32);
+        }
+
+        &:last-child {
+            padding-left: rem(32);
+        
+        }
+        }
+
+        @include mobile-s {
+            &:first-child {
+            border-left: none;
+            }
+        }
+       }
+
+        &-product {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: rem(20);
+            justify-self: start;
+        }
+
+        &-title {
+            color: var(--color-dark);
+            font-weight: 400;
+            font-size: rem(16);
+        }
+
+        &-status {
+            max-width: rem(81);
+            justify-self: start;
+        }
+
+        &-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: rem(24);
+            justify-self: start;
+
+            @include mobile {
+                flex-direction: column;
+                align-items: start;
+                row-gap: rem(10);
+            }
+        }
+
+        &-button {
+            padding: rem(14) rem(32);
+            border: none;
+
+            &-close {
+                color: var(--color-gray-600);
+                padding: rem(4);
+                border: rem(1) solid var(--color-gray-100);
+                border-color: var(--color-gray-500);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include hover {
+                    border-color: var(--color-orange);
+                }
+            }
+        }
+    }
+
+    &__footer {
+        grid-column: -1 / 1;
+        grid-row: 3 / 4;
+
+        @include tablet {
+            border-top: rem(1) solid var(--color-gray-100);
+        }
+
+        &-soc1als {
+            padding-block: rem(24);
+        }
+    }
+}

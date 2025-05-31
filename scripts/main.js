@@ -4,6 +4,7 @@ import SliderCollection from "./Slider.js";
 import QuickViewCollection from "./QuickView.js";
 import CounterCollection from "./Counter.js";
 import ChangeImageCollection from "./ChangeImage.js";
+import WishlistColletion from "./Wishlist.js";
 
 new BurgerButtonCollection()
 
@@ -16,3 +17,5 @@ new QuickViewCollection()
 new CounterCollection()
 
 new ChangeImageCollection()
+
+new WishlistColletion()

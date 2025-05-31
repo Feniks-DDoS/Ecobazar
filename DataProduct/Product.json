@@ -1,0 +1,82 @@
+[
+    {
+    "id": 1,
+    "name": "Green Apple",
+    "price": 14.99,
+    "image": "./images/popular-product/1.png",
+    "status": "In stock"
+    },
+
+    {
+    "id": 2,
+    "name": "Fresh Indian Malta",
+    "price": 20.00,
+    "image": "./images/popular-product/2.png",
+    "status": "In stock"
+    },
+
+    {
+    "id": 3,
+    "name": "Chinese cabbage",
+    "price": 12.00,
+    "image": "./images/popular-product/3.png",
+    "status": "In stock"
+    },
+
+    {
+    "id": 4,
+    "name": "Green Lettuce",
+    "price": 9.00,
+    "image": "./images/popular-product/4.png",
+    "status": "In stock"
+    },
+
+    {
+    "id": 5,
+    "name": "Eggplant",
+    "price": 34.00,
+    "image": "./images/popular-product/5.png",
+    "status": "In stock"
+    },
+
+    {
+    "id": 6,
+    "name": "Big Potatoes",
+    "price": 20.00,
+    "image": "./images/popular-product/6.png",
+    "status": "In stock"
+  },
+
+  {
+    "id": 7,
+    "name": "Corn",
+    "price": 20.00,
+    "image": "./images/popular-product/7.png",
+    "status": "In stock"
+  },
+
+  {
+    "id": 8,
+    "name": "Fresh Cauliflower",
+    "price": 12.00,
+    "image": "./images/popular-product/8.png",
+    "status": "In stock"
+  },
+
+  {
+    "id": 9,
+    "name": "Green Capsicum",
+    "price": 9.00,
+    "oldPrice": 20.99,
+    "image": "./images/popular-product/9.png",
+    "status": "In stock"
+  },
+
+  {
+    "id": 10,
+    "name": "Green Chili",
+    "price": 34.00,
+    "image": "./images/popular-product/10.png",
+    "status": "In stock"
+  }
+]

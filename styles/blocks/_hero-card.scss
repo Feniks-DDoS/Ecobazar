@@ -69,7 +69,7 @@
             border: none;
             border-radius: rem(50);
             background: url(../../images/hero/1grdient.jpg) center/contain no-repeat;
-            min-width: 42vw;
+            min-width: auto;
             min-height: 31.25vh;
             position: relative;
 
@@ -91,7 +91,7 @@
             border: none;
             border-radius: rem(30);
             background: url(../../images/hero/2.jpg) center/contain no-repeat;
-            min-width: rem(423);
+            min-width: auto;
             min-height: rem(288);
 
             @include laptop {
@@ -113,7 +113,7 @@
             color: var(--color-light);
             border-radius: rem(30);
             background: url(../../images/hero/3.jpg) center/contain no-repeat;
-            min-width: rem(423);
+            min-width: auto;
             min-height: rem(288);
 
             @include laptop {

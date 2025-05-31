@@ -94,6 +94,8 @@
     }
 
     &__header {
+        
+            border-bottom: rem(1) solid #E5E5E5;
         &-title {
             display: flex;
             align-items: center;

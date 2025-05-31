@@ -14,6 +14,8 @@ body {
 body {
     @include fluid-text(18 , 14);
     
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-family-base);
     background-color: var(--color-light);
     color: var(--color-green-700);
@@ -25,8 +27,9 @@ footer {
 }
 
 main {
-    flex-shrink: 1;
+    flex-grow: 1;
 }
+
 h1, .h1,
 h2, .h2,
 h3, .h3,

@@ -10,6 +10,11 @@
 
     &__extra {
         background-color: var(--color-light);
+
+        &-bg-gray {
+            
+        background-color: #F7F7F7;
+        }
     }
 
     &__body {
