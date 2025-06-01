@@ -20,6 +20,7 @@ class Wishlist  {
         this.removeFromWishlistElements = this.rootElement.querySelectorAll(this.selectors.removeFromWishlist)
         this.displayWishlistElement = this.rootElement.querySelector(this.selectors.displayWishlist)
         this.redIconWishlistElement = this.rootElement.querySelector(this.selectors.redIconWishlist)
+        this.addToWishlistButtonElement = this.rootElement.querySelector('section__popular-card')
 
         this.wishlist = this.loadStorage()
         this.render()
@@ -43,7 +44,6 @@ class Wishlist  {
         if(this.isInWishlist(id)) return
 
         try {
-        console.log("Already in wishlist")
         const response = await fetch('./DataProduct/Product.json')
         const products = await response.json()
         const product = products.find(p => p.id === id)
@@ -56,8 +56,10 @@ class Wishlist  {
     } catch (error) {
         console.error("Failed to fetch product data:", error)
     }
-
+            
+    
     this.redIconWishlistElement.classList.add(this.stateClasses.isActive)
+   
 
     alert('Product added to wishlist')
     }
@@ -121,6 +123,7 @@ class Wishlist  {
 
         
     this.displayWishlistElement.innerHTML = html
+    
 
     this.removeFromWishlistElements = this.rootElement.querySelectorAll(this.selectors.removeFromWishlist)
     this.removeFromWishlistElements.forEach((element) => {
@@ -144,11 +147,14 @@ class Wishlist  {
 
         if(!isAddButtonElement) return
 
+        event.preventDefault()
+
         const id = parseInt(isAddButtonElement.dataset.id)
 
 
         if(isNaN(id)) return
 
+      
         this.addToWishlist(id)
     }
 

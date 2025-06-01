@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/main.css">
     <script src="./scripts/main.js" type="module" defer></script>
 </head>
-<body data-js-quick-view-open data-js-wishlist>
+<body data-js-quick-view-open data-js-wishlist data-js-shop-cart> 
     <header class="header" data-js-header>
         <div class="header__promo">
             <div class="header__promo-inner container">
@@ -131,7 +131,7 @@
                             </a>
                         </li>
                         <li class="center__item">
-                            <a href="#" class="center__link">
+                            <a href="./shoping-cart.html" class="center__link">
                                 <img 
                                 src="./icons/header/Bag.svg" 
                                 alt="" 
@@ -140,9 +140,10 @@
                                 height="34"
                                 title="Choosed product"
                                 >
+                                <span class="center__link-icon" data-js-header-product-counter>0</span>
                                 <div class="center__total-info">
                                 <p class="center__title">Shopping cart:</p>
-                                <p class="center__price">$00.00</p>
+                                <p class="center__price"><span  data-js-header-total-price>$0.00</span></p>
                                 </div>
                             </a>
                         </li>
@@ -580,7 +581,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="1">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -650,7 +653,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="2">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -720,7 +725,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="3">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -790,7 +797,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="4">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -860,7 +869,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="5">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -930,7 +941,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="6">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1000,7 +1013,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="7">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1069,7 +1084,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="8">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1140,7 +1157,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="9">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1210,7 +1229,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="10">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1351,7 +1372,7 @@
                             </a>
                             </div>
                             <div class="section__hot-deals-bag"  aria-label="Add to card">
-                                <a href="#" class="section__hot-deals-link button button--green">Add to Cart
+                                <a href="#" class="section__hot-deals-link button button--green" data-js-add-to-shop-cart data-id="1">Add to Cart
                                 <svg width="20" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1480,7 +1501,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="6">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1549,7 +1572,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="7">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1617,7 +1642,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="8">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1686,7 +1713,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="9">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1754,7 +1783,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="10">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1822,7 +1853,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="6">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1890,7 +1923,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="7">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1957,7 +1992,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="8">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2026,7 +2063,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="9">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2094,7 +2133,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="10">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2162,7 +2203,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="10">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2274,7 +2317,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="1">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2344,7 +2389,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="2">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2414,7 +2461,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="3">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2484,7 +2533,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="4">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2554,7 +2605,9 @@
                             </div>
                             </div>
                             <div class="section__product-bag" title="Add to card" aria-label="Add to card">
-                                <a href="#" class="section__product-link">
+                                <a href="#" class="section__product-link" 
+                                data-js-add-to-shop-cart 
+                                data-id="5">
                                 <svg width="20" class=".section__product-image" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -3559,7 +3612,7 @@
                             <span class="counter__display" data-js-counter-display>0</span>
                             <button class="counter__button" aria-label="Increase the number" type="button" data-js-counter-up-button>+</button>
                         </div>
-                            <div class="controls__product-like" title="Wishlist" aria-label="Wishlist">
+                            <div class="controls__product-like visible-mobile" title="Wishlist" aria-label="Wishlist">
                                 <a 
                                 href="#"
                                 class="section__product-link section__product-link--white"
@@ -3580,7 +3633,7 @@
                     <div class="controls__end">
                             <div class="section__hot-deals-main">
                             <div class="section__hot-deals-bag controls__button" aria-label="Add to Cart">
-                                <a href="#" class="section__hot-deals-link button button--green">Add to Cart
+                                <a href="#" class="section__hot-deals-link button button--green" data-js-add-to-shop-cart data-id="1">Add to Cart
                                 <svg width="20" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>

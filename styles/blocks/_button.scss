@@ -4,6 +4,7 @@
 .button {
     padding: rem(16) rem(40);
     border-radius: rem(53);
+    transition: var(--transition-duration);
 
 
     @include mobile {
@@ -43,6 +44,31 @@
     }
 
 
+    &--dark {
+        font-weight: 600;
+        background-color: var(--color-dark);
+
+        @include hover {
+            background-color: var(--color-gray-500);
+        }
+    }
+
+    &--gray {
+        padding: rem(14) rem(32);
+        border: none;
+        color: var(--color-gray-700);
+        background-color: var(--color-gray-light);
+        border-radius: rem(43);
+        font-weight: 600;
+        font-size: rem(14);
+        line-height: 1.2;
+        
+
+        @include hover {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+        }
+    }
   
 
     &--green {

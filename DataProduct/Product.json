@@ -67,7 +67,6 @@
     "id": 9,
     "name": "Green Capsicum",
     "price": 9.00,
-    "oldPrice": 20.99,
     "image": "./images/popular-product/9.png",
     "status": "In stock"
   },

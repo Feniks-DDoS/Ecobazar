@@ -1,0 +1,50 @@
+@use '../helpers' as *; 
+
+
+.checkout {
+
+    &__title {
+        font-size: rem(20);
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: rem(7);
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(8);
+        padding-block: rem(12);
+
+        &:nth-child(2n) {
+        border-block: rem(1) solid var(--color-gray-100);
+        }
+    }
+
+    &__action {
+        padding-top: rem(20);
+
+        @include tablet {
+            max-width: rem(376);
+        }
+
+        @include mobile {
+            max-width: rem(250);
+        }
+    }
+
+    &__button {
+        padding: rem(16) rem(40);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
