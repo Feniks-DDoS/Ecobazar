@@ -1,0 +1,128 @@
+@use '../helpers' as *; 
+
+
+.newsletter {
+      position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: rem(100);
+    inset: 0;
+    min-height: 100dvh;
+    min-width: 100dvw;
+    background-color: rgba(0 ,0 , 0 , 0.7);
+    transition: var(--transition-duration);
+
+    &:not(.is-active) {
+        @include hide;
+
+        transform: translateY(100%);
+    }
+
+    @include tablet {
+        padding: rem(20);
+    }
+
+    &__control {
+        @include mobile {
+            min-width: 70dvw;
+        }
+    }
+
+
+    &__inner {
+        padding: rem(10);
+        background-color: var(--color-light);
+        border-radius: rem(8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(40);
+        position: relative;
+
+        @include tablet {
+            background: url(../../images/hero/2.jpg) center/cover no-repeat;
+        }
+
+        
+        @include mobile-s {
+            min-height: 70dvh;
+        }
+    }
+
+    &__header {
+
+        @include tablet {
+            display: none;
+        }
+        &-image {
+            border-radius: rem(4);
+            
+        
+    }
+}
+
+    &__body {
+        position: relative;
+
+        &-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &-promo {
+            position: absolute;
+            top: -20%;
+            right: 0;
+            content: "";
+
+            @include laptop {
+                top: -10%;
+            }
+
+            @include tablet {
+                top: 0;
+            }
+            
+             @include mobile-s {
+            top: -10%;
+        }
+        }
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: rem(50);
+        }
+
+        &-title {
+            font-weight: 600;
+            line-height: 1.2;
+
+        }
+
+        &-description {
+            color: var(--color-gray-400);
+            font-size: rem(16);
+            font-weight: 400;
+            padding-top: rem(12);
+            padding-bottom: rem(25);
+
+            @include tablet {
+                color: var(--color-dark);
+            }
+
+            &-span {
+                color: var(--color-orange);
+                font-weight: 600;
+            }
+        }
+
+    }
+}

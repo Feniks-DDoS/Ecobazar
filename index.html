@@ -9,7 +9,7 @@
     <script src="./scripts/main.js" type="module" defer></script>
 </head>
 <body data-js-quick-view-open data-js-wishlist data-js-shop-cart> 
-    <header class="header" data-js-header>
+    <header class="header" data-js-header >
         <div class="header__promo">
             <div class="header__promo-inner container">
                 <div class="header__promo-start ">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="header__center-end">
-                    <ul class="center__list">
+                    <ul class="center__list" data-js-shop-cart-open>
                         <li class="center__item">
                             <a href="./wishlist.html" class="center__link" data-js-wishlist-red-icon>
                                 <img 
@@ -130,15 +130,15 @@
                                 >
                             </a>
                         </li>
-                        <li class="center__item">
-                            <a href="./shoping-cart.html" class="center__link">
+                        <li class="center__item" data-js-show-shop-popup>
+                            <a href="#" class="center__link" >
                                 <img 
                                 src="./icons/header/Bag.svg" 
                                 alt="" 
                                 class="center__image"
                                 width="34"
                                 height="34"
-                                title="Choosed product"
+                                title="Shop cart"
                                 >
                                 <span class="center__link-icon" data-js-header-product-counter>0</span>
                                 <div class="center__total-info">
@@ -580,7 +580,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="1">
@@ -652,7 +652,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="2">
@@ -724,7 +724,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="3">
@@ -796,7 +796,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="4">
@@ -868,7 +868,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="5">
@@ -940,7 +940,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="6">
@@ -1012,7 +1012,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="7">
@@ -1083,7 +1083,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="8">
@@ -1156,7 +1156,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="9">
@@ -1228,7 +1228,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="10">
@@ -1254,7 +1254,7 @@
                                         <p class="card-big__subtitle p14">Best Deals</p>
                                         <h4 class="card-big__title">Sale of the Month</h4>
                                     </div>
-                                    <div class="card-big__body">
+                                    <div class="card-big__body" data-js-countdown>
                                         <div class="card-big__info">
                                             <span class="card-big__time">
                                                 <div class="card-big__time-wrapper">
@@ -1270,13 +1270,13 @@
                                             </span>
                                             <span class="card-big__time">
                                                 <div class="card-big__time-wrapper">
-                                            <span class="card-big__time-number">18</span>
+                                            <span class="card-big__time-number" data-js-countdown-minutes>18</span>
                                             <span class="card-big__time-text">mins</span>
                                                 </div>
                                             </span>
                                             <span class="card-big__time">
                                                 <div class="card-big__time-wrapper">
-                                            <span class="card-big__time-number">46</span>
+                                            <span class="card-big__time-number" data-js-countdown-second>46</span>
                                             <span class="card-big__time-text">secs</span>
                                                 </div>
                                             </span>
@@ -1371,7 +1371,7 @@
                                 />
                             </a>
                             </div>
-                            <div class="section__hot-deals-bag"  aria-label="Add to card">
+                            <div class="section__hot-deals-bag"  aria-label="Add to cart">
                                 <a href="#" class="section__hot-deals-link button button--green" data-js-add-to-shop-cart data-id="1">Add to Cart
                                 <svg width="20" height="20" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1410,7 +1410,7 @@
                             <span class="rating__feedback"> (524 Feedback)</span>
                             </div>
                             </div>
-                                    <div class="card-big__body hidden-mobile">
+                                    <div class="card-big__body hidden-mobile" data-js-countdown>
                                         <p class="card-big__hot-deals-title p14">Hurry up! Offer ends In:</p>
                                         <div class="card-big__info">
                                             <span class="card-big__time">
@@ -1427,13 +1427,13 @@
                                             </span>
                                             <span class="card-big__time">
                                                 <div class="card-big__time-wrapper">
-                                            <span class="card-big__time-number">18</span>
+                                            <span class="card-big__time-number" data-js-countdown-minutes>18</span>
                                             <span class="card-big__time-text">mins</span>
                                                 </div>
                                             </span>
                                             <span class="card-big__time">
                                                 <div class="card-big__time-wrapper">
-                                            <span class="card-big__time-number">46</span>
+                                            <span class="card-big__time-number" data-js-countdown-second>46</span>
                                             <span class="card-big__time-text">secs</span>
                                                 </div>
                                             </span>
@@ -1500,7 +1500,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="6">
@@ -1571,7 +1571,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="7">
@@ -1641,7 +1641,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="8">
@@ -1712,7 +1712,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="9">
@@ -1782,7 +1782,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="10">
@@ -1852,7 +1852,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="6">
@@ -1922,7 +1922,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="7">
@@ -1991,7 +1991,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="8">
@@ -2062,7 +2062,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="9">
@@ -2132,7 +2132,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="10">
@@ -2202,7 +2202,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="10">
@@ -2388,7 +2388,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="2">
@@ -2460,7 +2460,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="3">
@@ -2532,7 +2532,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="4">
@@ -2604,7 +2604,7 @@
                             </div>
                             </div>
                             </div>
-                            <div class="section__product-bag" title="Add to card" aria-label="Add to card">
+                            <div class="section__product-bag" title="Add to cart" aria-label="Add to cart">
                                 <a href="#" class="section__product-link" 
                                 data-js-add-to-shop-cart 
                                 data-id="5">
@@ -3452,9 +3452,12 @@
         <div class="quick-view__body">
             <div class="quick-view__product-gallery product-gallery" data-js-quick-view-wrapper>
                 <div class="product-gallery__main-info" >
-                <button  title="Next image" aria-label="Next image" class="product-gallery__button product-gallery__button--up" type="button" >
+                <button 
+                    data-js-quick-view-up-button 
+                    title="Next image" 
+                    aria-label="Next image" 
+                    class="product-gallery__button product-gallery__button--up" type="button" >
                     <img 
-                    data-js-quick-view-up-button
                     src="./icons/header/grau-arrow-down.svg" 
                     alt=""
                     width="24"
@@ -3500,7 +3503,11 @@
                     data-js-quick-view-small-image
                     />
                 </div>
-                <button title="Previous image" aria-label="Previous image" class="product-gallery__button product-gallery__button--down" type="button">
+                <button 
+                data-js-quick-view-down-button 
+                title="Previous image" 
+                aria-label="Previous image"
+                 class="product-gallery__button product-gallery__button--down" type="button">
                     <img 
                     src="./icons/header/grau-arrow-down.svg" 
                     alt=""
@@ -3508,7 +3515,7 @@
                     height="24"
                     loading="lazy" 
                     class="product-gallery__button-image"
-                     data-js-quick-view-down-button>
+                     >
                 </button>
             </div>
                 <div class="product-gallery__main-image" >
@@ -3607,7 +3614,7 @@
             <div class="quick-view__extra-controls">
                 <div class="controls">
                     <div class="controls__start">
-                        <div class="counter" data-js-counter>
+                        <div class="counter">
                             <button class="counter__button" aria-label="Reduce the number of" type="button" data-js-counter-down-button>-</button>
                             <span class="counter__display" data-js-counter-display>0</span>
                             <button class="counter__button" aria-label="Increase the number" type="button" data-js-counter-up-button>+</button>
@@ -3693,6 +3700,115 @@
         </div>
         </div>
     </div>
+    </dialog>
+
+    <dialog class="shop-popup" data-js-shop-cart data-js-shop-popup>
+        <div class="shop-popup__inner">
+            <header class="shop-popup__header">
+                <div class="shop-popup__header-inner">
+                    <h2 class="shop-popup__header-title">Shopping Card (<span class="shop-popup__title-icon" data-js-header-product-counter>0</span>)</h2>
+                    <form class="shop-popup__header-close-button-wrapper" method="dialog">
+                        <button class="button shop-popup__header-button " type="button">
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                    data-js-shop-popup-close-button>
+                    <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></button>
+                    </form>
+                </div>
+            </header>
+            <div class="shop-popup__body" >
+                <div class="shop-popup__body-inner">
+                    <ul class="shop-popup__list" data-js-display-popup-shop-cart>
+                    </ul>
+                </div>
+            </div>
+            <div class="shop-popup__extra">
+                <div class="shop-popup__extra-inner">
+                    <div class="shop-popup__extra-body">
+                        <p class="shop-popup__extra-title"><span class="shop-popup__extra-title-icon" data-js-header-product-counter>0</span>Product</p>
+                        <p class="shop-popup__extra-total" data-js-header-total-price="">$0.00</p>
+                    </div>
+                    <div class="shop-popup__extra-extra">
+                        <ul class="shop-popup__extra-list">
+                            <li class="shop-popup__extra-item">
+                                <a href="#" class="shop-popup__extra-button button button--green">Checkout</a>
+                            </li>
+                            <li class="shop-popup__extra-item">
+                                <a href="./shoping-cart.html" class="shop-popup__extra-button button button--gray">Go To Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="newsletter" data-js-newsletter>
+        <div class="newsletter__inner">
+            <header class="newsletter__header">
+                <div class="newsletter__header-inner">
+                    <img 
+                    src="./images/newsletter/1.jpg" 
+                    alt="" 
+                    class="newsletter__header-image"
+                    width="354"
+                    height="380"
+                    loading="lazy"
+                    />
+                </div>
+            </header>
+            <div class="newsletter__body">
+                <div class="newsletter__body-inner">
+                    <div class="newsletter__body-promo">
+                     <form class="shop-popup__header-close-button-wrapper" method="dialog">
+                        <button class="button shop-popup__header-button " type="button">
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                    data-js-news-letter-close-button>
+                    <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></button>
+                    </form>
+                    </div>
+                    <div class="newsletter__body-header">
+                        <h2 class="newsletter__body-title h4">Subcribe to Our Newsletter</h2>
+                        <div class="newsletter__body-description">
+                        <p>Subscribe to our newlletter and Save your <span class="newsletter__body-description-span">20% money </span> with discount code today.</p>
+                        </div>
+                        <form class="field__subcribe" data-js-form novalidate>
+                            <label for="email" class="field__subcribe-label  visually-hidden">Subcribe</label>
+                            <input 
+                            type="email" 
+                            class="field__subcribe-control newsletter__control" 
+                            id="email"
+                            placeholder="test@gmail.com"
+                            required
+                            type="email"
+                            aria-errormessage="email-errors"
+                            pattern="[^@]+@[^@]+\.[a-zA-Z]{3,30}"
+                            title="  
+                            Incorrect value: 
+                            Example: abc@mail.com"
+                            >
+                            <button 
+                            class="field__subcribe-button button button--green p16" 
+                            type="submit">Subcribe</button>
+                                <span class="field__errors" id="email-errors" data-js-form-errors></span> 
+                        </form>
+                    </div>
+                    <div class="newsletter__body-extra">
+                        <form class="field">
+                            <div class="newsletter__field-wrapper">
+                                <label  class="checkbox" >
+                                    <input type="checkbox" class="checkbox__input" data-js-dont-show-again>
+                                    <span class="checkbox__label">Do not show this window</span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </dialog>
 </body>
 </html>

@@ -1,0 +1,82 @@
+const rootSelector = `[data-js-newsletter]`
+
+class Newsletter {
+
+    selectors = {
+        root: rootSelector,
+        closeButton: `[data-js-news-letter-close-button]`,
+        dontShowAgain: `[data-js-dont-show-again]`,
+    }
+
+    stateClasses = {
+        isActive: 'is-active',
+        isLock: 'is-lock',
+    }
+
+    constructor(rootElement) {
+        this.rootElement = rootElement,
+        this.closeButtonElement = this.rootElement.querySelector(this.selectors.closeButton)
+        this.dontShowAgainElement = this.rootElement.querySelector(this.selectors.dontShowAgain)
+
+        this.safeData = this.loadStorage()
+        this.isActive()
+        this.bindEvents()
+    }
+
+    loadStorage() {
+        return localStorage.getItem('Dont-Show-Again') === 'true'     
+    }
+
+    saveData() {
+        localStorage.setItem('Dont-Show-Again', 'true')
+    }
+    
+
+    onDontShowAgainClick(event) {
+        const isDontShowAgain = event.target.matches(this.selectors.dontShowAgain)
+
+        if(!isDontShowAgain) return
+
+        this.saveData()
+    }
+
+    isActive() {
+
+        if(this.safeData) return
+
+        setTimeout(() => {
+            this.rootElement.classList.add(this.stateClasses.isActive)
+            document.documentElement.classList.add(this.stateClasses.isLock)
+        }, 2000)
+    }
+
+    onCloseClick(event) {
+        const isCloseButton = event.target.matches(this.selectors.closeButton)
+
+        if(!isCloseButton) return
+
+    
+        this.rootElement.classList.remove(this.stateClasses.isActive)
+        document.documentElement.classList.remove(this.stateClasses.isLock)
+    }
+
+    bindEvents() {
+        this.closeButtonElement.addEventListener('click' , (event) => this.onCloseClick(event))
+        this.dontShowAgainElement.addEventListener('click' , (event) => this.onDontShowAgainClick(event))
+    }
+
+}
+
+class NewsletterCollection {
+      constructor() {
+        this.init()
+    }
+
+    init() {
+        document.querySelectorAll(rootSelector).forEach((element) => {
+            new Newsletter(element)
+        })
+    }
+}
+
+export default NewsletterCollection

@@ -9,7 +9,7 @@
     <script src="./scripts/main.js" type="module" defer></script>
 </head>
 <body data-js-wishlist data-js-shop-cart>
-    <header class="header" data-js-header>
+    <header class="header" data-js-header >
         <div class="header__promo">
             <div class="header__promo-inner container">
                 <div class="header__promo-start ">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="header__center-end">
-                    <ul class="center__list">
+                    <ul class="center__list" data-js-shop-cart-open>
                         <li class="center__item">
                             <a href="./wishlist.html" class="center__link" data-js-wishlist-red-icon>
                                 <img 
@@ -130,8 +130,8 @@
                                 >
                             </a>
                         </li>
-                        <li class="center__item">
-                            <a href="./shoping-cart.html" class="center__link">
+                        <li class="center__item" data-js-show-shop-popup>
+                            <a href="#" class="center__link" >
                                 <img 
                                 src="./icons/header/Bag.svg" 
                                 alt="" 
@@ -143,7 +143,7 @@
                                 <span class="center__link-icon" data-js-header-product-counter>0</span>
                                 <div class="center__total-info">
                                 <p class="center__title">Shopping cart:</p>
-                                <p class="center__price" data-js-header-total-price>$0.00</p>
+                                <p class="center__price"><span  data-js-header-total-price>$0.00</span></p>
                                 </div>
                             </a>
                         </li>
@@ -544,5 +544,78 @@
             </div>
         </div>
     </footer>
+
+    
+    <dialog class="shop-popup" data-js-shop-cart data-js-shop-popup>
+        <div class="shop-popup__inner">
+            <header class="shop-popup__header">
+                <div class="shop-popup__header-inner">
+                    <h2 class="shop-popup__header-title">Shopping Card (<span class="shop-popup__title-icon" data-js-header-product-counter>0</span>)</h2>
+                    <form class="shop-popup__header-close-button-wrapper" method="dialog">
+                        <button class="button shop-popup__header-button " type="button">
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                    data-js-shop-popup-close-button>
+                    <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></button>
+                    </form>
+                </div>
+            </header>
+            <div class="shop-popup__body" >
+                <div class="shop-popup__body-inner">
+                    <ul class="shop-popup__list" data-js-display-popup-shop-cart>
+                        <li class="shop-popup__item">
+                            <div class="shop-popup__card">
+                                <img 
+                                src="./images/popular-product/1.png" 
+                                alt="Green Apple" 
+                                class="shop-popup__card-image"
+                                width="120"
+                                height="100"
+                                loading="lazy"
+                                />
+                                <div class="shop-popup__card-info">
+                                    <h3 class="shop-popup__card-title p14">Fresh Indian Orange</h3>
+                                    <p class="shop-popup__card-description">1kg x <span class="shop-popup__card-span">12.00</span></p>
+                                </div>
+                                <div class="shop-popup__card-extra">
+                                    <button 
+                                    class="shop-cart__body-button-close button " 
+                                    aria-label="Remove from shop cart" 
+                                    title="Remove from shop cart"
+                                    data-js-remove-from-shop-cart
+                                    data-id="${product.id}"
+                                    >
+                                        <svg width="24" height="24" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shop-popup__extra">
+                <div class="shop-popup__extra-inner">
+                    <div class="shop-popup__extra-body">
+                        <p class="shop-popup__extra-title"><span class="shop-popup__extra-title-icon" data-js-header-product-counter>0</span>Product</p>
+                        <p class="shop-popup__extra-total" data-js-header-total-price="">$0.00</p>
+                    </div>
+                    <div class="shop-popup__extra-extra">
+                        <ul class="shop-popup__extra-list">
+                            <li class="shop-popup__extra-item">
+                                <a href="#" class="shop-popup__extra-button button button--green">Checkout</a>
+                            </li>
+                            <li class="shop-popup__extra-item">
+                                <a href="./shoping-cart.html" class="shop-popup__extra-button button button--gray">Go To Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>

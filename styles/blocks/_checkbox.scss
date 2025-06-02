@@ -1,0 +1,43 @@
+@use '../helpers' as *; 
+
+.checkbox {
+    color: var(--color-gray-600);
+    font-weight: 400;
+    font-size: rem(14);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: rem(6);
+
+        @include tablet {
+        color: var(--color-dark);
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: rem(5);
+        border-radius: rem(4);
+    }
+    &__input {
+        --size: #{rem(28)};
+        appearance: none;
+        border: rem(1) solid var(--color-gray-100);
+        border-radius: rem(4);
+        margin: 0;
+        background-color: var(--color-gray-100);
+
+
+
+        @include square(var(--size));
+        @include flex-center;
+
+        &:not(:checked) {
+            &::after {
+                @include hide;
+            }
+        }
+
+           &::after {
+            content: "✔";
+            color: var(--color-dark);
+            transition: var(--transition-duration);
+        }
+    }
+}

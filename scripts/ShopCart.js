@@ -4,33 +4,46 @@ class ShopCart {
 
     selectors = {
         root: rootSelector,
+
         addToShopCart: `[data-js-add-to-shop-cart]`,
         removeFromShopCart: `[data-js-remove-from-shop-cart]`,
         removeFromShopCartAll: `[data-js-shop-cart-remove-all]`,
+
         displayShopCart: `[data-js-display-shop-cart]`,
+
         counterUpButton: `[data-js-counter-up-button]`,
         counterDownButton: `[data-js-counter-down-button]`,
+
         totalPrice: `[data-js-shop-cart-total]`,
+
         headerTotalPrice: `[data-js-header-total-price]`,
         headerProductCounter: `[data-js-header-product-counter]`,
+
+        displayPopupShopCart: `[data-js-display-popup-shop-cart]`,
     }
 
     stateClasses = {
-        isActive: 'is-active',
+        isSelected: 'is-selected'
     }
+
+
 
     constructor(rootElement) {
         this.rootElement = rootElement
         this.addToShopCartElement = this.rootElement.querySelectorAll(this.selectors.addToShopCart)
         this.displayShopCartElement = this.rootElement.querySelector(this.selectors.displayShopCart)
+        this.displayPopupShopCartElement = this.rootElement.querySelector(this.selectors.displayPopupShopCart)
         this.removeFromShopCartAllElement = this.rootElement.querySelector(this.selectors.removeFromShopCartAll)
         this.headerTotalPriceElement = this.rootElement.querySelectorAll(this.selectors.headerTotalPrice)
         this.headerProductCounterElement = this.rootElement.querySelectorAll(this.selectors.headerProductCounter)
+        this.counterUpButtonElement = this.rootElement.querySelector(this.selectors.counterUpButton)
+        this.counterDownButtonElement = this.rootElement.querySelector(this.selectors.counterDownButton)
 
 
         this.shopCart = this.loadStorage()
         this.updateProductCart()
         this.updateAllPrice()
+        this.renderShopPopup()
         this.render()
         this.bindEvents()
     }
@@ -68,6 +81,7 @@ class ShopCart {
             existingItem.quantity += 1
             this.saveShopCart()
             this.saveTotalPrice()
+            this.renderShopPopup()
             this.render()
             this.updateAllPrice()
             alert('Product quantity increased in shop cart')
@@ -86,13 +100,16 @@ class ShopCart {
                 this.saveShopCart()
                 this.saveTotalPrice()
                 this.updateProductCart()
+                this.renderShopPopup()
                 this.render()
                 this.updateAllPrice()
+
             alert('Product added to shop cart')
             }
         }catch(error) {
             console.error("Failed to fetch product data:", error)
         }
+        
     }
 
     removeFromShopCart(id) {
@@ -100,6 +117,7 @@ class ShopCart {
         this.saveShopCart()
         this.saveTotalPrice()
         this.updateProductCart()
+        this.renderShopPopup()
         this.render()
         this.updateAllPrice()
     }
@@ -109,8 +127,10 @@ class ShopCart {
         this.saveShopCart()
         this.saveTotalPrice()
         this.updateProductCart()
+        this.renderShopPopup()
         this.render()
         this.updateAllPrice()
+        
         alert('Shop cart cleaned')
     }
 
@@ -168,6 +188,7 @@ class ShopCart {
                                 </td>
                             </tr>
             `)
+            .join("")
 
             this.displayShopCartElement.innerHTML = html
 
@@ -200,6 +221,68 @@ class ShopCart {
             })
     }
 
+    renderShopPopup() {
+           this.totalPriceElement = this.rootElement.querySelectorAll(this.selectors.totalPrice)
+
+        if(!this.displayPopupShopCartElement) return
+
+        if(this.shopCart.length === 0) {
+            this.displayPopupShopCartElement.innerHTML =  `<p class="shop-cart__empty" >Your shop cart is empty.</p>`
+
+              this.updateAllPrice()
+              return
+        }
+
+        const htmlPopup = this.shopCart.map(product => `
+
+                        <li class="shop-popup__item">
+                            <div class="shop-popup__card">
+                                <img 
+                                src="${product.image}" 
+                                alt="${product.name}" 
+                                class="shop-popup__card-image"
+                                width="120"
+                                height="100"
+                                loading="lazy"
+                                />
+                                <div class="shop-popup__card-info">
+                                    <h3 class="shop-popup__card-title p14">${product.name}</h3>
+                                    <p class="shop-popup__card-description">1kg x <span class="shop-popup__card-span">${product.price.toFixed(2)}</span></p>
+                                    <p class="shop-popup__card-quantity">Quantity : <span class="shop-popup__card-span" data-js-header-product-counter>${product.quantity}</span></p>
+                                </div>
+                                <div class="shop-popup__card-extra">
+                                    <button 
+                                    class="shop-cart__body-button-close button " 
+                                    aria-label="Remove from shop cart" 
+                                    title="Remove from shop cart"
+                                    data-js-remove-from-shop-cart
+                                    data-id="${product.id}"
+                                    >
+                                        <svg width="24" height="24" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+            `)
+            .join("")
+
+            this.displayPopupShopCartElement.innerHTML = htmlPopup
+
+            
+            this.totalPriceElement = this.rootElement.querySelectorAll(this.selectors.totalPrice)
+            this.removeFromShopCartElement = this.rootElement.querySelectorAll(this.selectors.removeFromShopCart)
+
+            this.updateAllPrice()
+
+            this.removeFromShopCartElement.forEach((element) => {
+                element.addEventListener('click' , (event) => this.onRemoveClick(event))
+            })
+
+    }
+
 
     updateProductCart() {
         const count = this.shopCart.reduce((sum , product ) => sum + product.quantity, 0)
@@ -210,8 +293,6 @@ class ShopCart {
         })
     }
    
-    
-
     updateAllPrice() {
         this.totalPrice = this.shopCart.reduce((sum , product) => {
             return sum + product.price * product.quantity
@@ -261,7 +342,6 @@ class ShopCart {
         }
         }
     }
-
     onRemoveClick(event) {
         const isRemoveButtonElement = event.target.closest(this.selectors.removeFromShopCart)
 
@@ -271,7 +351,7 @@ class ShopCart {
 
         this.removeFromShopCart(id)
     }
-
+    
     onRemoveAllClick(event) {
         const isRemoveAllButton = event.target.closest(this.selectors.removeFromShopCartAll)
 
@@ -282,19 +362,29 @@ class ShopCart {
     }
 
     onAddClick(event) {
+        event.preventDefault()
         const isAddButtonElement = event.target.closest(this.selectors.addToShopCart)
 
         if(!isAddButtonElement) return
 
-        event.preventDefault()
 
         const id = parseInt(isAddButtonElement.dataset.id)
 
         if(isNaN(id)) return
 
         this.addToShopCart(id)
+
     }
 
+    onUpQuatityClick(event) {
+        if(!event.target.matches(this.selectors.counterUpButton)) return
+
+    }
+
+    onDownQuatityClick(event) {
+        if(!event.target.matches(this.selectors.counterDownButton)) return
+
+    }
     bindEvents() {
         this.addToShopCartElement.forEach((element) => {
             element.addEventListener('click' , (event) => this.onAddClick(event))
