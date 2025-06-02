@@ -781,10 +781,10 @@ button[aria-label]::before {
   width: 0.9375rem;
   height: 0.9375rem;
   transition: var(--transition-duration);
-  background: url(../../icons/header/grau-arrow-down.svg) center/contain no-repeat;
+  background: url(../icons/header/grau-arrow-down.svg) center/contain no-repeat;
 }
 .header__menu-item:nth-child(-n+4) .header__menu-link.is-active::after {
-  background: url(../../icons/header/light-arrow-down.svg) center/contain no-repeat;
+  background: url(../icons/header/light-arrow-down.svg) center/contain no-repeat;
 }
 .header__menu-link {
   position: relative;
@@ -1374,13 +1374,13 @@ button[aria-label]::before {
   }
 }
 .card-big__item:first-child {
-  background: url(../../images/popular-product/extra1.jpg) center/cover no-repeat;
+  background: url(../images/popular-product/extra1.jpg) center/cover no-repeat;
 }
 .card-big__item:nth-child(2n) {
-  background: url(../../images/popular-product/extra2.jpg) center/cover no-repeat;
+  background: url(../images/popular-product/extra2.jpg) center/cover no-repeat;
 }
 .card-big__item:last-child {
-  background: url(../../images/popular-product/extra3.jpg) center/cover no-repeat;
+  background: url(../images/popular-product/extra3.jpg) center/cover no-repeat;
 }
 .card-big__item:last-child .card-big__link {
   color: var(--color-dark);
@@ -1510,14 +1510,14 @@ button[aria-label]::before {
   color: var(--color-light);
   border: none;
   border-radius: 3.125rem;
-  background: url(../../images/hero/1grdient.jpg) center/contain no-repeat;
+  background: url(../images/hero/1grdient.jpg) center/contain no-repeat;
   min-width: auto;
   min-height: 31.25vh;
   position: relative;
 }
 @media (width <= 90.06125rem) {
   .hero__card--first {
-    background: url(../../images/hero/1.jpg) center/cover no-repeat;
+    background: url(../images/hero/1.jpg) center/cover no-repeat;
   }
 }
 @media (width <= 47.99875rem) {
@@ -1534,13 +1534,13 @@ button[aria-label]::before {
   color: var(--color-dark);
   border: none;
   border-radius: 1.875rem;
-  background: url(../../images/hero/2.jpg) center/contain no-repeat;
+  background: url(../images/hero/2.jpg) center/contain no-repeat;
   min-width: auto;
   min-height: 18rem;
 }
 @media (width <= 90.06125rem) {
   .hero__card--second {
-    background: url(../../images/hero/2.jpg) center/cover no-repeat;
+    background: url(../images/hero/2.jpg) center/cover no-repeat;
   }
 }
 @media (width <= 63.99875rem) {
@@ -1557,13 +1557,13 @@ button[aria-label]::before {
   justify-content: center;
   color: var(--color-light);
   border-radius: 1.875rem;
-  background: url(../../images/hero/3.jpg) center/contain no-repeat;
+  background: url(../images/hero/3.jpg) center/contain no-repeat;
   min-width: auto;
   min-height: 18rem;
 }
 @media (width <= 90.06125rem) {
   .hero__card--three {
-    background: url(../../images/hero/3.jpg) center/cover no-repeat;
+    background: url(../images/hero/3.jpg) center/cover no-repeat;
   }
 }
 @media (width <= 63.99875rem) {
@@ -1665,7 +1665,7 @@ button[aria-label]::before {
   translate: 0 -50%;
   left: 90%;
   content: "";
-  background: url(../../icons/left-arrow-green.svg) center/contain no-repeat;
+  background: url(../icons/left-arrow-green.svg) center/contain no-repeat;
   width: 0.9375rem;
   height: 0.75rem;
   transition: var(--transition-duration);
@@ -1885,10 +1885,10 @@ button[aria-label]::before {
   --size: 1.25rem;
   width: var(--size);
   height: var(--size);
-  background: url(../../icons/gray-star.svg) center/contain no-repeat;
+  background: url(../icons/gray-star.svg) center/contain no-repeat;
 }
 .rating__star.is-active {
-  background: url(../../icons/yellow-star.svg) center/contain no-repeat;
+  background: url(../icons/yellow-star.svg) center/contain no-repeat;
 }
 
 .section__bg-gray {
@@ -1965,7 +1965,7 @@ button[aria-label]::before {
 }
 
 .card-hot-deals__wrapper {
-  background: url(../../images/hot-deals/5.jpg) center/cover no-repeat;
+  background: url(../images/hot-deals/5.jpg) center/cover no-repeat;
   width: 100%;
   min-height: 22.375rem;
   border-radius: 0.625rem;
@@ -2222,7 +2222,7 @@ button[aria-label]::before {
   left: 1.5rem;
   width: 2rem;
   height: 1.625rem;
-  background: url(../../icons/client-reviews/1.svg) center/contain no-repeat;
+  background: url(../icons/client-reviews/1.svg) center/contain no-repeat;
 }
 .feedback__card-info {
   padding-block: 1rem;
@@ -2328,7 +2328,7 @@ button[aria-label]::before {
   }
   .follow-us__link:hover::after {
     opacity: 1;
-    background: url("../../icons/instagram.svg") center/contain no-repeat;
+    background: url("../icons/instagram.svg") center/contain no-repeat;
   }
 }
 @media (any-hover: none) {
@@ -2338,7 +2338,7 @@ button[aria-label]::before {
   }
   .follow-us__link:active::after {
     opacity: 1;
-    background: url("../../icons/instagram.svg") center/contain no-repeat;
+    background: url("../icons/instagram.svg") center/contain no-repeat;
   }
 }
 .follow-us__image {
@@ -3041,7 +3041,7 @@ button[aria-label]::before {
 }
 
 .hero-alt {
-  background: url("../../images/hero-alt/1.jpg") center/cover no-repeat;
+  background: url("../images/hero-alt/1.jpg") center/cover no-repeat;
 }
 .hero-alt__body {
   padding-block: 3.125rem;
@@ -3651,7 +3651,7 @@ button[aria-label]::before {
 }
 @media (width <= 63.99875rem) {
   .newsletter__inner {
-    background: url(../../images/hero/2.jpg) center/cover no-repeat;
+    background: url(../images/hero/2.jpg) center/cover no-repeat;
   }
 }
 @media (width <= 31.31125rem) {
