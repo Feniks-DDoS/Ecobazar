@@ -37,7 +37,13 @@
         }
 
         &-link {
-                  position: relative;
+        position: relative;
+        color: var(--color-gray-400);
+
+        &.is-active {
+            color: var(--color-primary);
+            pointer-events: none;
+        }
 
         &::before {
                 position: absolute;

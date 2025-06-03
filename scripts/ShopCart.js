@@ -20,6 +20,8 @@ class ShopCart {
         headerProductCounter: `[data-js-header-product-counter]`,
 
         displayPopupShopCart: `[data-js-display-popup-shop-cart]`,
+
+        displayCheckout: `[data-js-checkout-product-display]`,
     }
 
     stateClasses = {
@@ -33,6 +35,7 @@ class ShopCart {
         this.addToShopCartElement = this.rootElement.querySelectorAll(this.selectors.addToShopCart)
         this.displayShopCartElement = this.rootElement.querySelector(this.selectors.displayShopCart)
         this.displayPopupShopCartElement = this.rootElement.querySelector(this.selectors.displayPopupShopCart)
+        this.displayCheckoutElement = this.rootElement.querySelector(this.selectors.displayCheckout)
         this.removeFromShopCartAllElement = this.rootElement.querySelector(this.selectors.removeFromShopCartAll)
         this.headerTotalPriceElement = this.rootElement.querySelectorAll(this.selectors.headerTotalPrice)
         this.headerProductCounterElement = this.rootElement.querySelectorAll(this.selectors.headerProductCounter)
@@ -44,6 +47,7 @@ class ShopCart {
         this.updateProductCart()
         this.updateAllPrice()
         this.renderShopPopup()
+        this.renderCheckout()
         this.render()
         this.bindEvents()
     }
@@ -82,6 +86,7 @@ class ShopCart {
             this.saveShopCart()
             this.saveTotalPrice()
             this.renderShopPopup()
+            this.renderCheckout()
             this.render()
             this.updateAllPrice()
             alert('Product quantity increased in shop cart')
@@ -101,6 +106,7 @@ class ShopCart {
                 this.saveTotalPrice()
                 this.updateProductCart()
                 this.renderShopPopup()
+                this.renderCheckout()
                 this.render()
                 this.updateAllPrice()
 
@@ -118,6 +124,7 @@ class ShopCart {
         this.saveTotalPrice()
         this.updateProductCart()
         this.renderShopPopup()
+        this.renderCheckout()
         this.render()
         this.updateAllPrice()
     }
@@ -128,6 +135,7 @@ class ShopCart {
         this.saveTotalPrice()
         this.updateProductCart()
         this.renderShopPopup()
+        this.renderCheckout()
         this.render()
         this.updateAllPrice()
         
@@ -273,9 +281,11 @@ class ShopCart {
 
             
             this.totalPriceElement = this.rootElement.querySelectorAll(this.selectors.totalPrice)
+            this.displayCheckoutElement = this.rootElement.querySelector(this.selectors.displayCheckout)
             this.removeFromShopCartElement = this.rootElement.querySelectorAll(this.selectors.removeFromShopCart)
 
             this.updateAllPrice()
+            this.renderCheckout()
 
             this.removeFromShopCartElement.forEach((element) => {
                 element.addEventListener('click' , (event) => this.onRemoveClick(event))
@@ -283,6 +293,54 @@ class ShopCart {
 
     }
 
+    renderCheckout() {
+        this.totalPriceElement = this.rootElement.querySelectorAll(this.selectors.totalPrice)
+
+        if(!this.displayCheckoutElement) return
+
+        if(this.shopCart.length === 0) {
+            this.displayCheckoutElement.innerHTML =  `<p class="shop-cart__empty" >Your shop cart is empty.</p>`
+
+              this.updateAllPrice()
+              
+              return
+        }
+
+        const checkoutHtml = this.shopCart.map(product => `
+            
+                    <li class="order__checkout-item">
+                        <div class="order__checkout-card">
+                            <img 
+                            src="${product.image}" 
+                            alt="${product.name}" 
+                            width="60"
+                            height="60"
+                            loading="lazy"
+                            class="order__checkout-image">
+                            <div class="order__checkout-description">
+                                <p class="order__checkout-card-title">${product.name}</p>
+                                <p class="order__checkout-quantity">x${product.quantity}</p>
+                            </div>
+                        </div>
+                        <div class="order__checkout-card-extra">
+                            <p class="order__checkout-price">$${product.price}</p>
+                        </div>
+                    </li>
+            `)
+            .join("")
+
+            this.displayCheckoutElement.innerHTML = checkoutHtml
+
+            this.totalPriceElement = this.rootElement.querySelectorAll(this.selectors.totalPrice)
+            this.removeFromShopCartElement = this.rootElement.querySelectorAll(this.selectors.removeFromShopCart)
+
+            this.updateAllPrice()
+
+               this.removeFromShopCartElement.forEach((element) => {
+                element.addEventListener('click' , (event) => this.onRemoveClick(event))
+            })
+
+    }
 
     updateProductCart() {
         const count = this.shopCart.reduce((sum , product ) => sum + product.quantity, 0)
@@ -342,6 +400,7 @@ class ShopCart {
         }
         }
     }
+
     onRemoveClick(event) {
         const isRemoveButtonElement = event.target.closest(this.selectors.removeFromShopCart)
 
@@ -376,15 +435,6 @@ class ShopCart {
 
     }
 
-    onUpQuatityClick(event) {
-        if(!event.target.matches(this.selectors.counterUpButton)) return
-
-    }
-
-    onDownQuatityClick(event) {
-        if(!event.target.matches(this.selectors.counterDownButton)) return
-
-    }
     bindEvents() {
         this.addToShopCartElement.forEach((element) => {
             element.addEventListener('click' , (event) => this.onAddClick(event))

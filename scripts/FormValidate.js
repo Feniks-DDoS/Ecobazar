@@ -9,8 +9,10 @@ class FormValidate {
     }
 
     errorMessages = {
+        minLength: ({ minLength }) => `Min character ${minLength}`,
+        maxLength: ({ maxLength }) => `Max character ${maxLength}`,
         valueMissing: () => `Incorrect value`,
-        patternMismatch: ({ title }) => title || `Incorrect value`
+        patternMismatch: ({ title }) => title || `Incorrect value`,
     }
 
     constructor(rootElement) {
@@ -58,6 +60,20 @@ class FormValidate {
 
     }
 
+    onChange(event) {
+
+        const { target } = event
+
+        const isRequired = target.required
+        const isToggleType = ['checkbox' , 'radio'].includes(target.type)
+
+        if(isToggleType && isRequired) {
+            this.validate(target)
+        }
+
+        
+     }
+
     onSubmit(event) {
         const isFormElement = event.target.matches(this.selectors.form)
 
@@ -91,6 +107,7 @@ class FormValidate {
         document.addEventListener('blur', (event) => {
             this.onBlur(event)
         }, true),
+        document.addEventListener('change' , (event) => this.onChange(event))
         document.addEventListener('submit', (event) => this.onSubmit(event))
     }
 

@@ -1,0 +1,141 @@
+@use '../helpers' as *; 
+
+
+.order {
+
+    padding-top: rem(32);
+    padding-bottom: rem(80);
+    &__inner {
+        display: grid;
+        grid-template-columns: 70% auto;
+        column-gap: rem(24);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            row-gap: rem(24);
+        }
+    }
+
+    &__billing {
+        &-title {
+            padding-bottom: rem(20);
+            font-weight: 500;
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5 , 1fr);
+        gap: rem(16);
+        align-items: start;
+        justify-content: center;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+
+        &-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            row-gap: rem(8);
+
+            &--wide {
+                grid-column: -1 / 1;
+            }
+
+            &-wrapper-half {
+                display: grid;
+                grid-column: -1 / 1;
+                gap: rem(16);
+                grid-template-columns: repeat(2, 1fr);
+         
+            @include mobile {
+            grid-template-columns: 1fr;
+        }
+            }
+        }
+
+        &-additional {
+            border-top: rem(1) solid var(--color-gray-100);
+            padding-top: rem(32);
+
+
+            &-wrapper {
+                min-width: 100%;
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(8);
+            }
+
+            &-title {
+                font-weight: 500;
+                padding-bottom: rem(20);
+            }
+        }
+    }
+
+    &__checkout {
+        padding: rem(24);
+        border: rem(1) solid var(--color-gray-100);
+        border-radius: rem(8);
+
+        &-button {
+            border: none;
+            min-width: 100%;
+        }
+
+        &-title {
+            font-size: rem(20);
+            padding-bottom: rem(12);
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            max-height: rem(240);
+            overflow-y: auto;
+            padding-right: rem(10);
+            row-gap: rem(4);
+        }
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: rem(10);
+            width: 100%;
+
+            &:last-child {
+                padding-bottom: rem(12);
+            }
+        }
+
+        &-description {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: rem(6);
+        }
+
+        &-card {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: rem(6);
+
+            &-title {
+                font-size: rem(14);
+                font-weight: 400;
+                padding-right: rem(6);
+            }
+        }
+    }
+}

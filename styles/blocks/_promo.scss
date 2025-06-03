@@ -10,19 +10,11 @@
     &__item {
         display: flex;
 
-        &:not(:last-child)::after {
-        content: "/";
-        margin-left: rem(10);
-        }
-
-        &:first-child::after {
-            content: "";
-        }
-
-         &:nth-child(-n + 2)::after {
-            content: "|";
+        &:nth-child(3n)::after {
+          content: "/";
             margin-left: rem(10);
         }
+
     }
 
     &__link {
