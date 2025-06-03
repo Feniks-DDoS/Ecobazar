@@ -29,9 +29,9 @@ new ChangeImageCollection()
 
 new WishlistColletion()
 
-new ShopPopupCollection()
-
 new SelectCollection()
+
+new ShopPopupCollection()
 
 new ShopCartCollection()
 
