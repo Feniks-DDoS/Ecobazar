@@ -41,15 +41,64 @@ class ShopCart {
         this.headerProductCounterElement = this.rootElement.querySelectorAll(this.selectors.headerProductCounter)
         this.counterUpButtonElement = this.rootElement.querySelector(this.selectors.counterUpButton)
         this.counterDownButtonElement = this.rootElement.querySelector(this.selectors.counterDownButton)
+        this.productElement = this.rootElement.querySelectorAll('.section__popular-item')
 
 
+        this.selectedProducts = this.loadSelectedProductStorage()
         this.shopCart = this.loadStorage()
         this.updateProductCart()
+        this.markSelectedProducts()
         this.updateAllPrice()
         this.renderShopPopup()
         this.renderCheckout()
         this.render()
         this.bindEvents()
+    }
+
+    loadSelectedProductStorage() {
+        const data = localStorage.getItem("Selected-products")
+
+        return data ? JSON.parse(data) : []
+    }
+
+    saveSelectedProducts() {
+        localStorage.setItem("Selected-products" , JSON.stringify(this.selectedProducts))
+    }
+
+    markSelectedProducts() {
+        this.productElement.forEach((element) => {
+            const id = parseInt(element.dataset.id)
+            if(this.selectedProducts.includes(id)) {
+                element.classList.add(this.stateClasses.isSelected)
+            }
+        })
+    }
+
+    markAsSelected(id) {
+        this.productElement.forEach((element) => {
+            if(parseInt(element.dataset.id) === parseInt(id)) {
+                element.classList.add(this.stateClasses.isSelected)
+            }
+        })
+
+        if(!this.selectedProducts.includes(id)) {
+            this.selectedProducts.push(id)
+            this.saveSelectedProducts()
+        }
+    }
+
+    markUnselected(id) {
+    this.productElement.forEach((element) => {
+        if (parseInt(element.dataset.id) === parseInt(id)) {
+            element.classList.remove(this.stateClasses.isSelected)
+        }
+    })
+
+    const index = this.selectedProducts.indexOf(id)
+    if (index !== -1) {
+        this.selectedProducts.splice(index, 1)
+        this.saveSelectedProducts()
+    }
     }
 
     loadStorage() {
@@ -116,13 +165,16 @@ class ShopCart {
             console.error("Failed to fetch product data:", error)
         }
         
-    }
+    } 
 
     removeFromShopCart(id) {
+        this.selectedProducts = this.selectedProducts.filter(pId => pId !== id)
+        this.saveSelectedProducts()
         this.shopCart = this.shopCart.filter(p => p.id !== id)
         this.saveShopCart()
         this.saveTotalPrice()
         this.updateProductCart()
+        this.markUnselected(id)
         this.renderShopPopup()
         this.renderCheckout()
         this.render()
@@ -130,6 +182,8 @@ class ShopCart {
     }
 
     removeAllFromShopCart() {
+        this.selectedProducts = []
+        this.saveSelectedProducts()
         this.shopCart = []
         this.saveShopCart()
         this.saveTotalPrice()
@@ -409,8 +463,10 @@ class ShopCart {
         const id = parseInt(isRemoveButtonElement.dataset.id)
 
         this.removeFromShopCart(id)
+
     }
-    
+   
+
     onRemoveAllClick(event) {
         const isRemoveAllButton = event.target.closest(this.selectors.removeFromShopCartAll)
 
@@ -420,7 +476,7 @@ class ShopCart {
 
     }
 
-    onAddClick(event) {
+    async onAddClick(event) {
         event.preventDefault()
         const isAddButtonElement = event.target.closest(this.selectors.addToShopCart)
 
@@ -431,8 +487,9 @@ class ShopCart {
 
         if(isNaN(id)) return
 
-        this.addToShopCart(id)
+        await this.addToShopCart(id)
 
+        this.markAsSelected(id)
     }
 
     bindEvents() {

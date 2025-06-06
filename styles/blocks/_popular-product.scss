@@ -5,22 +5,11 @@
     &__popular {
 
     &-list{
+
         display: grid;
         grid-template-columns: repeat(5, 1fr);
 
-        &-2-rows {
-
-        grid-template-rows: repeat(2 ,1fr);
-        }
-
-        &-3-rows {
-            grid-template-rows: repeat(3 , 1fr);
-        }
-        
-        &-1-rows {
-            grid-template-rows: repeat(1 , 1fr);
-        }
-        @include laptop {
+          @include laptop {
         grid-template-columns: repeat(3, 1fr);
         }
 
@@ -34,6 +23,31 @@
             align-items: center;
             overflow-x: auto;
         }
+
+        &-2-rows {
+
+        grid-template-rows: repeat(2 ,1fr);
+        }
+
+        &-3-rows {
+            grid-template-rows: repeat(3 , 1fr);
+        }
+
+        &-5-rows {
+            grid-template-rows: repeat(5 , 1fr);
+            grid-template-columns: repeat(3 , 1fr);
+            gap: rem(24);
+
+            @include tablet {
+                grid-template-columns: repeat(2, 1fr);
+                gap: rem(8);
+            }
+        }
+        
+        &-1-rows {
+            grid-template-rows: repeat(1 , 1fr);
+        }
+      
     }
 
     &-item {

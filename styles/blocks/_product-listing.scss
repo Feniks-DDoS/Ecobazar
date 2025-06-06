@@ -1,0 +1,60 @@
+@use '../helpers' as *; 
+
+
+.product-listing {
+
+    padding-top: rem(32);
+    padding-bottom: rem(88);
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 30%  70%;
+        column-gap: rem(24);
+
+        @include laptop {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__body {
+
+        overflow: auto;
+        &-header {
+        padding-bottom: rem(34);
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        }
+
+        &-title {
+            font-size: rem(16);
+            font-weight: 400;
+            color: var(--color-gray-600);
+
+            &--black {
+                font-weight: 600;
+                color: var(--color-dark);
+                padding-right: rem(5);
+            }
+        }
+
+        &-item {
+            border-radius: rem(8);
+            min-height: rem(407);
+
+            @include mobile {
+                min-height: rem(280);
+            }
+
+            &-image {
+                width: rem(302);
+                height: rem(302);
+
+               @include mobile {
+                width: rem(230);
+                height: rem(230);
+               }
+            }
+        }
+    }
+}

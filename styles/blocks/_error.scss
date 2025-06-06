@@ -1,0 +1,28 @@
+@use '../helpers' as *; 
+
+.error {
+    padding-block: rem(80);
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    &__card {
+        max-width: rem(585);
+
+        &-title {
+            padding-top: rem(32);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        &-description {
+            padding-top: rem(20);
+            padding-bottom: rem(24);
+        }
+    }
+}

@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,  user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Ecobazar |  Checkout</title>
+    <title>Ecobazar |  Account</title>
     <link rel="icon" href="./images/Web_icon_logo.png">
     <link rel="stylesheet" href="./styles/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js" integrity="sha512-+3RJc0aLDkj0plGNnrqlTwCCyMmDCV1fSYqXw4m+OczX09Pas5A/U+V3pFwrSyoC1svzDy40Q9RU/85yb/7D2A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="./scripts/main.js" type="module" defer></script>
 </head>
-<body data-js-shop-cart  > 
-    <header class="header" data-js-header>
+<body data-js-wishlist data-js-shop-cart>
+    <header class="header" data-js-header >
         <div class="header__promo">
             <div class="header__promo-inner container">
                 <div class="header__promo-start ">
@@ -260,7 +259,7 @@
                     </div>
                 </div>
                 <div class="header__center-end">
-                    <ul class="center__list">
+                    <ul class="center__list" data-js-shop-cart-open>
                         <li class="center__item">
                             <a href="./wishlist.html" class="center__link" data-js-wishlist-red-icon>
                                 <img 
@@ -273,8 +272,8 @@
                                 >
                             </a>
                         </li>
-                        <li class="center__item">
-                            <a href="./shoping-cart.html" class="center__link">
+                        <li class="center__item" data-js-show-shop-popup>
+                            <a href="#" class="center__link" >
                                 <img 
                                 src="./icons/header/Bag.svg" 
                                 alt="" 
@@ -286,7 +285,7 @@
                                 <span class="center__link-icon" data-js-header-product-counter>0</span>
                                 <div class="center__total-info">
                                 <p class="center__title">Shopping cart:</p>
-                                <p class="center__price" data-js-header-total-price>$0.00</p>
+                                <p class="center__price"><span  data-js-header-total-price>$0.00</span></p>
                                 </div>
                             </a>
                         </li>
@@ -335,12 +334,11 @@
         </div>
     </header>
 
-
-    <main>
+    <main data-js-sign-in>
         <section class="hero-alt" aria-labelledby="hero-alt-title">
             <div class="hero-alt__inner ">
                 <div class="hero-alt__body container">
-                    <h1 class="hero-alt__title visually-hidden" id="hero-alt-title">Checkout</h1>
+                    <h1 class="hero-alt__title visually-hidden" id="hero-alt-title">Navigation menu</h1>
                     <nav class="hero-alt__menu">
                         <ul class="hero-alt__menu-list">
                             <li class="hero-alt__menu-item">
@@ -355,401 +353,147 @@
                                     >
                                 </a>
                             </li>
-                            <li class="hero-alt__menu-item">
-                                <a href="./shoping-cart.html" class="hero-alt__menu-link">
-                                    Shoping cart
+                            <li class="hero-alt__menu-item " >
+                                <a href="#" class="hero-alt__menu-link is-active" data-js-sign-in-menu-element>
+                                    Login
                                 </a>
                             </li>
-                            <li class="hero-alt__menu-item">
-                                <a href="./checkout.html" class="hero-alt__menu-link is-active">
-                                    Checkout
+                            <li class="hero-alt__menu-item" >
+                                <a href="#" class="hero-alt__menu-link" data-js-registr-menu-element>
+                                    Create Account
                                 </a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
+
         </section>
 
-        <section class="order" aria-labelledby="Billing-information-title" >
-            <div class="order__inner container">
-                <div class="order__billing-info">
-                    <h2 class="order__billing-title p24" id="Billing-information-title">Billing Information</h2>
-                    <form class="order__form" method="post" data-js-form novalidate id="billing-form">
-                        <div class="order__form-cell field">
-                            <label for="FirstName" class="field__label">First name <span class="field__reguired-star" aria-hidden="true">*</span></label>
+        <section class="sign-in" aria-labelledby="sign-in-title">
+            <div class="sign-in__inner container" > 
+                <h1 class="sing-in__title visually-hidden" id="sing-in-title">Login and Registration</h1>
+                <div class="sign-in__body" data-js-sign-in-body>
+                <div class="sign-in__login login">
+                    <div class="login__body">
+                        <h2 class="login__title h6">Sign In</h2>
+                        <form  class="login__form login__field field" method="post" novalidate data-js-form>
+                            <div class="login__form-cell field">
+                            <label for="Login" class="filed__label field__login-label visually-hidden">Email</label>
+                            <input
+                             id="Login" 
+                             placeholder="Email"
+                             required
+                            class="field__control field__login-control" 
+                            aria-errormessage="login-errors">
+                            <span class="field__errors" id="login-errors" data-js-form-errors></span>
+                            </div>
+                            <div class="login__form-cell login__form-cell--password field">
+                            <label for="Password" class="filed__label field__login-label visually-hidden">Password</label>
                             <input 
-                            class="field__control"
-                            id="FirstName"
-                            placeholder="Jake"
-                            minlength="3"
-                            maxlength="20"
+                            id="Password"
+                            placeholder="Password" 
+                            type="password" 
+                            class="field__control field__login-control"
                             required
-                            aria-errormessage="FirstName-errors" 
-                            >
-                            <span class="field__errors" id="FirstName-errors" data-js-form-errors></span>
-                        </div>
-                        <div class="order__form-cell field">
-                            <label for="LastName" class="field__label">Last name <span class="field__reguired-star" aria-hidden="true">*</span></label>
-                            <input 
-                            class="field__control"
-                            id="LastName"
-                            placeholder="Smith"
-                            minlength="3"
-                            maxlength="20"
-                            required
-                            aria-errormessage="LastName-errors" 
-                            >
-                            <span class="field__errors" id="LastName-errors" data-js-form-errors></span>
-                        </div>
-                        <div class="order__form-cell field">
-                            <label for="CompanyName" class="field__label">Company Name (optional) </label>
-                            <input 
-                            class="field__control"
-                            id="CompanyName"
-                            placeholder="Perfect pear"
-                            >
-                        </div>
-                        <div class="order__form-cell order__form-cell--wide field">
-                            <label for="StreetAddress" class="field__label">Street Address <span class="field__reguired-star" aria-hidden="true">*</span></label>
-                            <input 
-                            required
-                            class="field__control"
-                            id="StreetAddress"
-                            placeholder="1744 Wood Duck Drive"
-                            aria-errormessage="StreetAddress-errors" 
-                            >
-                            <span class="field__errors" id="StreetAddress-errors" data-js-form-errors></span>
-                        </div>
-                        <div class="order__form-cell field">
-                            <label for="CountryAndRegion" class="field__label">Country / Region <span class="field__reguired-star" aria-hidden="true">*</span></label>
-                             <div class="field__body">
-                                <div class="select" data-js-select>
-                                    <label 
-                                    for="CountryAndRegion" 
-                                    class="select__label visually-hidden"
-                                    id="CountryAndRegion-select-label"
-
-                                    >States</label>
-                                    <select 
-                                    id="CountryAndRegion" 
-                                    tabindex="-1" 
-                                    class="select__control" 
-                                    data-js-select-original-control
-                                    >
-                                    <option value="Select" selected>Selects</option>
-                                	<option value="Alabama">USA</option>
-                                    <option value="Alaska">Japan</option>
-                                    <option value="Arizona">Canada</option>
-                                    <option value="Arkansas">Germani</option>
-                                    </select>
-                                    <div class="select__body">
-                                        <div 
-                                        tabindex="0"
-                                        role="combobox"
-                                        aria-expanded="false"
-                                        aria-haspopup="listbox"
-                                        aria-controls="CountryAndRegion-select-dropdown"
-                                        data-js-select-button
-                                        class="select__button field__control">
-                                        Selects
-                                    </div>
-                                        <div 
-                                        class="select__dropdown"
-                                        id="CountryAndRegion-select-dropdown"
-                                        aria-labelledby="CountryAndRegion-select-label"
-                                        role="listbox"
-                                        data-js-select-dropdown
-                                        >
-                                            <div 
-                                            class="select__option is-selected is-current"
-                                            role="option"
-                                            aria-selected="true"
-                                            id="CountryAndRegion-select-option-1"
-                                            data-js-select-option
-                                            >
-                                            Selects
-                                            </div>
-                                            <div 
-                                            class="select__option"
-                                            role="option"
-                                            aria-selected="false"
-                                            id="CountryAndRegion-select-option-2"
-                                            data-js-select-option
-                                            >
-                                            USA
-                                            </div>
-                                            <div 
-                                            class="select__option "
-                                            role="option"
-                                            aria-selected="false"
-                                            id="CountryAndRegion-select-option-3"
-                                            data-js-select-option
-                                            >
-                                            Japan
-                                            </div>
-                                            <div 
-                                            class="select__option"
-                                            role="option"
-                                            aria-selected="false"
-                                            id="CountryAndRegion-select-option-4"
-                                            data-js-select-option
-                                            >
-                                            Canada
-                                            </div>
-                                            <div 
-                                            class="select__option "
-                                            role="option"
-                                            aria-selected="false"
-                                            id="CountryAndRegion-select-option-5"
-                                            data-js-select-option
-                                            >
-                                            Germani
-                                            </div>
-                                        </div>
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                             aria-errormessage="password-errors"
+                             data-js-sign-in-password
+                             >
+                             <svg data-js-show-password class="field__login-eye" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="field__errors" id="password-errors" data-js-form-errors></span>   
+                            </div>
+                            <div class="login__form-cell  field">
+                                <div class="login__form-actions">
+                                    <div class="login__form-aqreement">
+                                        <label  class="checkbox">
+                                            <input type="checkbox" aria-errormessage="agreement-errors" class="checkbox__input" required>
+                                            <span class="checkbox__label">Remember me</span>
+                                            <span class="field__errors" id="agreement-errors" data-js-form-errors></span>
+                                        </label>
+                                        <a href="./error.html" class="login__forget-password">Forget Password</a>
                                     </div>
                                 </div>
-                            <span class="field__errors" id="CountryOrRegion-errors" data-js-form-errors></span>
                             </div>
-                        </div>
-                        <div class="order__form-cell field" >
-                            <label for="States" class="field__label">States<span class="field__reguired-star" aria-hidden="true">*</span></label>
-                            <div class="field__body">
-                                <div class="select" data-js-select>
-                                    <label 
-                                    for="States" 
-                                    class="select__label visually-hidden"
-                                    id="states-select-label"
-
-                                    >States</label>
-                                    <select 
-                                    id="States" 
-                                    tabindex="-1" 
-                                    class="select__control" 
-                                    data-js-select-original-control
-                                    >
-                                    <option value="Select" selected>Selects</option>
-                                	<option value="Alabama">Alabama</option>
-                                    <option value="Alaska">Alaska</option>
-                                    <option value="Arizona">Arizona</option>
-                                    <option value="Arkansas">Arkansas</option>
-                                    </select>
-                                    <div class="select__body">
-                                        <div 
-                                        tabindex="0"
-                                        role="combobox"
-                                        aria-expanded="false"
-                                        aria-haspopup="listbox"
-                                        aria-controls="states-select-dropdown"
-                                        data-js-select-button
-                                        class="select__button field__control">
-                                        Selects
-                                    </div>
-                                        <div 
-                                        class="select__dropdown"
-                                        id="states-select-dropdown"
-                                        aria-labelledby="states-select-label"
-                                        role="listbox"
-                                        data-js-select-dropdown
-                                        >
-                                            <div 
-                                            class="select__option is-selected is-current"
-                                            role="option"
-                                            aria-selected="true"
-                                            id="states-select-option-1"
-                                            data-js-select-option
-                                            >
-                                            Selects
-                                            </div>
-                                            <div 
-                                            class="select__option"
-                                            role="option"
-                                            aria-selected="false"
-                                            id="states-select-option-2"
-                                            data-js-select-option
-                                            >
-                                            Alabama
-                                            </div>
-                                            <div 
-                                            class="select__option "
-                                            role="option"
-                                            aria-selected="false"
-                                            id="states-select-option-3"
-                                            data-js-select-option
-                                            >
-                                            Alaska
-                                            </div>
-                                            <div 
-                                            class="select__option"
-                                            role="option"
-                                            aria-selected="false"
-                                            id="states-select-option-4"
-                                            data-js-select-option
-                                            >
-                                            Arizona
-                                            </div>
-                                            <div 
-                                            class="select__option "
-                                            role="option"
-                                            aria-selected="false"
-                                            id="states-select-option-5"
-                                            data-js-select-option
-                                            >
-                                            Arkansas
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <span class="field__errors" id="CountryOrRegion-errors" data-js-form-errors></span>
-                            </div>
-                        </div>
-                        <div class="order__form-cell field">
-                            <label for="Zipcode" class="field__label">Zip Code<span class="field__reguired-star" aria-hidden="true">*</span></label>
-                            <input 
-                            type="number"
-                            class="field__control"
-                            id="Zipcode"
-                            required
-                            placeholder="462-0803"
-                            aria-errormessage="zipcode-errors" 
-                            >
-                            <span class="field__errors" id="zipcode-errors" data-js-form-errors></span>
-                        </div>
-                        <div class="order__form-cell-wrapper-half">
-                        <div class="order__form-cell order__form-cell--half field">
-                                <label for="email" class="field__label">Email <span class="field__reguired-star" aria-hidden="true">*</span></label>
-                                <input  
-                                id="email" 
-                                class="field__control" 
-                                placeholder="test@gmail.com"
-                                required
-                                type="email"
-                                aria-errormessage="email-errors"
-                                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                                title="
-                                    Incorrect value: 
-                                    Example: abc@mail.com"
-                                />
-                                <span class="field__errors" id="email-errors" data-js-form-errors></span>    
-                        </div>
-                        <div class="order__form-cell order__form-cell--half field">
-                                <label for="phoneNumber" class="field__label">Phone<span class="field__reguired-star" aria-hidden="true">*</span></label>
-                                <input  
-                                id="phoneNumber" 
-                                class="field__control" 
-                                data-js-input-mask="(000) 0000-0000"
-                                placeholder="(999) 9999-9999" 
-                                required
-                                aria-errormessage="phoneNumber-errors"
-                                />
-                                <span class="field__errors" id="phoneNumber-errors" data-js-form-errors></span>    
-                        </div>
-                        </div>
-                        <div class="order__form-cell order__form-cell--wide field">
-                            <div class="order__form-actions">
-                                <div class="order__form-aqreement">
-                                    <label  class="checkbox">
-                                        <input type="checkbox" aria-errormessage="agreement-errors" class="checkbox__input" required>
-                                        <span class="checkbox__label">Ship to a different address</span>
-                                        <span class="field__errors" id="agreement-errors" data-js-form-errors></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order__form-cell order__form-cell--wide order__form-additional field">
-                            <div class="order__form-additional-wrapper">
-                                <h3 class="order__form-additional-title p24">Additional Info</h3>
-                                <div class="order__form-additional-info">
-                                    <label for="additionalInfo" class="field__label" aria-hidden="true">Order Notes (Optional)</label>
-                                    <textarea id="additionalInfo" class="field__textarea" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="order__checkout-info">
-                    <div class="order__checkout"  >
-                        <h3 class="order__checkout-title">Order Summery</h3>
-                        <div class="order__checkout-product"> 
-                            <div class="order__checkout-body">
-                                <ul class="order__checkout-list" data-js-checkout-product-display>
-                                    <li class="order__checkout-item">
-                                        <div class="order__checkout-card">
-                                            <img 
-                                            src="./images/popular-product/1.png" 
-                                            alt="" 
-                                            width="60"
-                                            height="60"
-                                            loading="lazy"
-                                            class="order__checkout-image">
-                                            <div class="order__checkout-description">
-                                                <p class="order__checkout-card-title">grennsd asasda</p>
-                                                <p class="order__checkout-quantity">x5</p>
-                                            </div>
-                                        </div>
-                                        <div class="order__checkout-card-extra">
-                                            <p class="order__checkout-price">$76</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="checkout" data-js-shop-cart>
-                            <h3 class="checkout__title visually-hidden">Cart Total</h3>
-                            <ul class="checkout__list">
-                                <li class="checkout__item">
-                                        <h4 class="checkout__subtotal-title p14" >Subtotal</h4>
-                                        <span class="checkout__subtotal-price p14" data-js-shop-cart-total >$0.00</span>
-                                </li>
-                                <li class="checkout__item">
-                                        <h4 class="checkout__shiping-title p14">Shipping:</h4>
-                                        <span class="checkout__shiping-info p14">Free</span>
-                                </li>
-                                <li class="checkout__item">
-                                        <h4 class="checkout__total-title p16">Total:</h4>
-                                        <span class="checkout__total-price p16" data-js-shop-cart-total >$0.00</span>
-                                </li>
-                            </ul>
-                            <div class="order__checkout-radio">
-                                <div class="radio">
-                                    <form class="radio__form">
-                                    <fieldset class="radio__wrapper">
-                                        <legend class="radio__title">Payment Method</legend>
-                                        <ul class="radio__list">
-                                            <li class="radio__item">
-                                                <label for="CashOnDelivery" class="radio__label">
-                                                    <input checked tabindex="0" type="radio" name="payment-method" value="Cash on Delivery" id="CashOnDelivery" class="radio__control">
-                                                    <span class="radio__custom"></span>
-                                                    Cash on Delivery</label>
-                                            </li>
-                                            <li class="radio__item">
-                                                <label for="Paypal" class="radio__label">
-                                                    <input type="radio" name="payment-method" value="Paypal" id="Paypal" class="radio__control">
-                                                    <span class="radio__custom"></span>
-                                                    Paypal</label>
-                                            </li>
-                                            <li class="radio__item">
-                                                <label for="AmazonPay" class="radio__label">
-                                                    <input type="radio" name="payment-method" value="Amazon Pay" id="AmazonPay" class="radio__control">
-                                                    <span class="radio__custom"></span>
-                                                    Amazon Pay</label>
-                                            </li>
-                                        </ul>
-                                    </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="checkout__action">
-                            <button
-                            form="billing-form"
-                            type="submit"
-                            class="order__checkout-button button button--green"
-                            aria-label="Proceed to checkout"
-                            >
-                            Place Order</button>
-                            </div>
+                            <button type="submit" class="button login login__button button button--green">Login</button>
+                        </form>
+                        <div class="login__create-account">
+                            <p class="login__info">Don't have account?<a href="#reqisterForm" data-js-registr-button class="login__info-link"> Register</a></p>
                         </div>
                     </div>
+                </div>
+                </div>
+                <div class="sign-in__registr-body" data-js-registr-body >
+                <div class="sign-in__reqistr login">
+                    <div class="login__body" >
+                        <h2 class="login__title h6">Create Account</h2>
+                        <form  class="login__form login__field field" method="post" novalidate data-js-form>
+                            <div class="login__form-cell field">
+                            <label for="Registr-login" class="filed__label field__login-label visually-hidden">Email</label>
+                            <input
+                             id="Registr-login" 
+                             placeholder="Email"
+                             required
+                             aria-errormessage="reqistr-login-errors"
+                            class="field__control field__login-control" 
+                            >
+                            <span class="field__errors" id="reqistr-login-errors" data-js-form-errors></span>
+                            </div>
+                            <div class="login__form-cell login__form-cell--password field">
+                            <label for="registr-password" class="filed__label field__login-label visually-hidden">Password</label>
+                            <input 
+                            id="registr-password"
+                            placeholder="Password" 
+                            type="password" 
+                            required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+                            class="field__control field__login-control" 
+                             aria-errormessage="registr-password-errors"
+                            data-js-sign-in-password>
+                             <svg data-js-show-password class="field__login-eye" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="field__errors" id="registr-password-errors" data-js-form-errors></span>
+                            </div>
+                            <div class="login__form-cell login__form-cell--password field">
+                            <label for="confirm-password" class="filed__label field__login-label visually-hidden">Confirm Password</label>
+                            <input 
+                            id="confirm-password"
+                            placeholder="Confirm Password" 
+                            type="password" 
+                            required
+                            class="field__control field__login-control" 
+                            aria-errormessage="confirm-password-errors"
+                             data-js-sign-in-password>
+                             <svg data-js-show-password class="field__login-eye" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="field__errors" id="confirm-password-errors" data-js-form-errors></span>
+                            </div>
+                            <div class="login__form-cell  field">
+                                <div class="login__form-actions">
+                                    <div class="login__form-aqreement">
+                                        <label  class="checkbox">
+                                            <input type="checkbox" aria-errormessage="agreement-errors" class="checkbox__input" required>
+                                            <span class="checkbox__label">Accept all terms & Conditions</span>
+                                            <span class="field__errors" id="agreement-errors" data-js-form-errors></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="button login login__button button button--green">Create Account</button>
+                        </form>
+                        <div class="login__create-account">
+                            <p class="login__info">Already have account<a href="#loginForm" data-js-sign-in-button class="login__info-link">  Login</a></p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
