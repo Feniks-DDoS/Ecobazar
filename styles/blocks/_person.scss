@@ -17,4 +17,18 @@
         font-weight: 500;
         line-height: 1.5;
     }
+
+    &__product-feedback {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(10);
+    }
+
+    &__header-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: rem(10);
+    }
 }

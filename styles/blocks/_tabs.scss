@@ -1,0 +1,46 @@
+@use '../helpers' as *; 
+
+
+.tabs {
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            overflow: auto;
+
+            @include mobile {
+                justify-content: start;
+            }
+
+        box-shadow: 0px 1px 0px 0px #E5E5E5;
+        margin-bottom: rem(32);
+        &-actions {
+            display: flex;
+            column-gap: rem(5);
+        }
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        padding: rem(16);
+        font-size: rem(16);
+        color: var(--color-gray-500);
+        text-wrap: nowrap;
+   
+
+        @include hover {
+           color: var(--color-primary);
+        }
+
+        &.is-active {
+            color: var(--color-dark);
+            box-shadow: 0px -2px 0px 0px #20B526 inset;
+        }
+    }
+
+    &__content:not(.is-active) {
+        display: none;
+    }
+}

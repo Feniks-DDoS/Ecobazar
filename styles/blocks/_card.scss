@@ -7,9 +7,11 @@
             display: grid;
             grid-template-columns: repeat(3 , 1fr);
             column-gap: rem(24);
+            padding-bottom: rem(60);
 
             @include laptop {
                 overflow-x: auto;
+                padding-bottom: rem(30);
             }
         }
 

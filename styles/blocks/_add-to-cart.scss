@@ -1,0 +1,39 @@
+@use '../helpers' as *; 
+
+
+.add-to-cart {
+
+    &:not(.is-active) {
+        transform: translateY(250%);
+    transition: var(--transition-duration);
+    }
+
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    transition: var(--transition-duration);
+    z-index: 300;
+
+    &__inner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(300);
+        height: rem(70);
+        background-color: var(--color-light);
+        border: rem(1) solid var(--color-primary);
+    }
+
+    &__title {
+        color: var(--color-primary);
+        font-size: rem(20);
+        font-weight: 600;
+        text-align: center;
+    }
+}

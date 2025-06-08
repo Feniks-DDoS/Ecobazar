@@ -66,3 +66,12 @@
 
 @use "./blocks/product-listing";
 @use "./blocks/filters";
+
+@use "./blocks/product-details";
+@use "./blocks/tabs";
+@use "./blocks/product-descriptions";
+@use "./blocks/video";
+@use "./blocks/product-additional";
+@use "./blocks/product.feedback";
+
+@use "./blocks/add-to-cart";

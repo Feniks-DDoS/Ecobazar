@@ -1,0 +1,38 @@
+@use '../helpers' as *; 
+
+
+.product-additional {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        row-gap: 1rem;
+    }
+
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(12);
+        font-weight: 400;
+        font-size: rem(14);
+    }
+
+    &__item {
+        display: flex;
+        width: 100%;
+    }
+
+    &__title {
+        &-span {
+            text-align: end;
+            padding-left: rem(20);
+            color: var(--color-gray-600);
+        }
+    }
+}

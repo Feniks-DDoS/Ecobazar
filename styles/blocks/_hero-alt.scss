@@ -16,9 +16,10 @@
 
         &-list {
             display: flex;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
-            column-gap: rem(12);
+            flex-wrap: wrap;
+            gap: rem(12);
         }
 
         &-item {

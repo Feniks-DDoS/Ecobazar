@@ -8,6 +8,8 @@ class Wishlist  {
         removeFromWishlist: `[data-js-remove-from-wishlist]`,
         displayWishlist: `[data-js-display-wishlist]`,
         redIconWishlist: `[data-js-wishlist-red-icon]`,
+        addToWishlistMessage: `[data-js-add-to-wishlist-message]`,
+        removeFromWishlistMessage: `[data-js-remove-wishlist-message]`,
     }
 
     stateClasses = {
@@ -20,6 +22,8 @@ class Wishlist  {
         this.removeFromWishlistElements = this.rootElement.querySelectorAll(this.selectors.removeFromWishlist)
         this.displayWishlistElement = this.rootElement.querySelector(this.selectors.displayWishlist)
         this.redIconWishlistElement = this.rootElement.querySelector(this.selectors.redIconWishlist)
+        this.addToWishlistMessageElement = this.rootElement.querySelector(this.selectors.addToWishlistMessage)
+        this.removeFromWishlistMessageElement = this.rootElement.querySelector(this.selectors.removeFromWishlistMessage)
         this.addToWishlistButtonElement = this.rootElement.querySelector('section__popular-card')
 
         this.wishlist = this.loadStorage()
@@ -61,7 +65,15 @@ class Wishlist  {
     this.redIconWishlistElement.classList.add(this.stateClasses.isActive)
    
 
-    alert('Product added to wishlist')
+    this.addToWishlistMessage()
+    }
+
+    addToWishlistMessage() {
+        this.addToWishlistMessageElement.classList.add(this.stateClasses.isActive)
+
+        setTimeout(() => {
+            this.addToWishlistMessageElement.classList.remove(this.stateClasses.isActive)
+        }, 1800)
     }
 
     removeFromWishlist(id) {
@@ -71,8 +83,18 @@ class Wishlist  {
 
         
     this.redIconWishlistElement.classList.remove(this.stateClasses.isActive)
+
+    this.removeFromWishlistMessage()
     }
 
+    
+       removeFromWishlistMessage() {
+        this.removeFromWishlistMessageElement.classList.add(this.stateClasses.isActive)
+
+        setTimeout(() => {
+            this.removeFromWishlistMessageElement.classList.remove(this.stateClasses.isActive)
+        }, 1800)
+    }
 
     render() {
         if(!this.displayWishlistElement) return

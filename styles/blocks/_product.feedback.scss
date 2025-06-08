@@ -1,0 +1,55 @@
+@use '../helpers' as *; 
+
+
+.product-feedback {
+
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        max-width: rem(760);
+        max-height: rem(479);
+        row-gap: rem(40);
+        overflow: hidden;
+
+        
+    &.is-expanded {
+        overflow: initial;
+        max-height: 100%;
+    }
+    }
+
+    &__item:not(:last-child) {
+        box-shadow:  0px 1px 0px 0px #E5E5E5;
+        padding-bottom: rem(20);
+    }
+    &__card-header {
+        display: grid;
+        row-gap: rem(14);
+    }
+
+    &__time,
+    &__card-body {
+        color: var(--color-gray-500);
+        font-weight: 400;
+        font-size: rem(14);
+    }
+
+    &__button {
+        border: none;
+        color: var(--color-primary);
+        background: rgba(86, 172, 89, 0.10);
+
+        @include hover {
+            color: var(--color-light);
+        }
+
+        &.is-close {
+            display: none;
+        }
+    }
+
+    &__extra {
+        padding-top: rem(24);
+    }
+}

@@ -22,10 +22,16 @@ class ShopCart {
         displayPopupShopCart: `[data-js-display-popup-shop-cart]`,
 
         displayCheckout: `[data-js-checkout-product-display]`,
+
+        addToShopCartMessage: `[data-js-add-to-cart-message]`,
+        addToShopCartTwoTimeMessage: `[data-js-again-add-to-cart-message]`,
+
+        removeFromShopCartMessage: `[data-js-remove-from-cart-message]`,
     }
 
     stateClasses = {
-        isSelected: 'is-selected'
+        isSelected: 'is-selected',
+        isActive: 'is-active',
     }
 
 
@@ -41,6 +47,9 @@ class ShopCart {
         this.headerProductCounterElement = this.rootElement.querySelectorAll(this.selectors.headerProductCounter)
         this.counterUpButtonElement = this.rootElement.querySelector(this.selectors.counterUpButton)
         this.counterDownButtonElement = this.rootElement.querySelector(this.selectors.counterDownButton)
+        this.addToShopCartMessageElement = this.rootElement.querySelector(this.selectors.addToShopCartMessage)
+        this.addToShopCartTwoTimeMessageElement = this.rootElement.querySelector(this.selectors.addToShopCartTwoTimeMessage)
+        this.removeFromShopCartMessageElement = this.rootElement.querySelector(this.selectors.removeFromShopCartMessage)
         this.productElement = this.rootElement.querySelectorAll('.section__popular-item')
 
 
@@ -138,7 +147,7 @@ class ShopCart {
             this.renderCheckout()
             this.render()
             this.updateAllPrice()
-            alert('Product quantity increased in shop cart')
+            this.addToShopCartTwoTimeMessage()
             return
         }
      
@@ -159,7 +168,7 @@ class ShopCart {
                 this.render()
                 this.updateAllPrice()
 
-            alert('Product added to shop cart')
+                this.addToShopCartMessage()
             }
         }catch(error) {
             console.error("Failed to fetch product data:", error)
@@ -179,6 +188,8 @@ class ShopCart {
         this.renderCheckout()
         this.render()
         this.updateAllPrice()
+        
+        this.removeFromShopCartMessage()
     }
 
     removeAllFromShopCart() {
@@ -193,8 +204,36 @@ class ShopCart {
         this.render()
         this.updateAllPrice()
         
-        alert('Shop cart cleaned')
+        this.removeFromShopCartMessage()
     }
+
+
+    removeFromShopCartMessage() {
+        this.removeFromShopCartMessageElement.classList.add(this.stateClasses.isActive)
+
+        setTimeout(() => {
+            this.removeFromShopCartMessageElement.classList.remove(this.stateClasses.isActive)
+        }, 1800)
+    }
+
+    addToShopCartTwoTimeMessage() {
+        this.addToShopCartTwoTimeMessageElement.classList.add(this.stateClasses.isActive)       
+
+         setTimeout(() => {
+            this.addToShopCartTwoTimeMessageElement.classList.remove(this.stateClasses.isActive)
+        }, 1800)
+    }
+
+
+    addToShopCartMessage() {
+        this.addToShopCartMessageElement.classList.add(this.stateClasses.isActive)       
+
+         setTimeout(() => {
+            this.addToShopCartMessageElement.classList.remove(this.stateClasses.isActive)
+        }, 1800)
+    }
+
+    
 
     render() {
 
@@ -463,6 +502,7 @@ class ShopCart {
         const id = parseInt(isRemoveButtonElement.dataset.id)
 
         this.removeFromShopCart(id)
+        
 
     }
    
@@ -496,7 +536,11 @@ class ShopCart {
         this.addToShopCartElement.forEach((element) => {
             element.addEventListener('click' , (event) => this.onAddClick(event))
         })
-        this.removeFromShopCartAllElement.addEventListener('click' , (event) => this.onRemoveAllClick(event))
+        document.addEventListener('DOMContentLoaded', () => {
+        if (this.removeFromShopCartAllElement) {
+            this.removeFromShopCartAllElement.addEventListener('click', this.onRemoveAllClick.bind(this));
+        }
+    });
     }
 
 }

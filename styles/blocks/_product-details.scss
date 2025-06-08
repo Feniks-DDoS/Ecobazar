@@ -1,0 +1,12 @@
+@use '../helpers' as *; 
+
+
+.product-details {
+    padding-top: rem(32);
+    padding-bottom: rem(20);
+
+    &__view-main-info {
+        overflow: initial;
+        max-height: none;
+    }
+}
