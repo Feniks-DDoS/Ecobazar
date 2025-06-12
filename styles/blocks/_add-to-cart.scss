@@ -4,7 +4,7 @@
 .add-to-cart {
 
     &:not(.is-active) {
-        transform: translateY(250%);
+    transform: translateY(250%);
     transition: var(--transition-duration);
     }
 

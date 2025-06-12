@@ -1,0 +1,100 @@
+@use '../helpers' as *; 
+
+
+.team {
+
+    padding-top: rem(50);
+
+    @include tablet {
+        padding-top: rem(0);
+    }
+
+    &__card {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(32);
+
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: rem(24);
+
+        @include laptop {
+            display: grid;
+            grid-template-columns: repeat(2 ,1fr);
+        }
+
+        @include mobile-s {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        position: relative;
+        background-color: var(--color-light);
+        border-radius: rem(10);
+        border: rem(1) solid #E6E6E6;
+
+        opacity: 0;  
+        visibility: hidden;
+        position: absolute;
+        pointer-events: none;
+
+           &.is-active {
+            opacity: 1;
+             visibility: visible;
+             position: relative;
+            pointer-events: auto;
+        }
+    }
+
+    &__image {
+        border-top-right-radius: rem(10);
+        border-top-left-radius: rem(10);
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &__soc1als {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 74%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: rem(10);
+        border-top-left-radius: rem(10);
+         background-image:  
+         linear-gradient(0deg, rgba(43, 87, 46, 0.80) 0%,
+          rgba(43, 87, 46, 0.80) 100%);
+          transition: var(--transition-duration);
+
+          &:not(.is-hover) {
+            opacity: 0;
+          }
+
+          @include laptop {
+            height: 77%;
+          }
+         }
+    
+
+    &__info {
+        padding-top: rem(16);
+        padding-inline: rem(20);
+        padding-bottom: rem(20);
+    }
+}

@@ -14,12 +14,12 @@
     background-color: rgba(0 ,0 , 0 , 0.7);
     transition: var(--transition-duration);
 
-      &:not(.is-active) {
-            @include hide;
-        }
-
         @include mobile {
             padding: rem(30);
+        }
+
+        &:not([open]) {
+            @include hide;
         }
 
     &__inner {

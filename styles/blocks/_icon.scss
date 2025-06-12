@@ -1,0 +1,83 @@
+@use '../helpers' as *; 
+
+
+.icon {
+
+    @include mobile {
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(24);
+    }
+
+    &__slider {
+        @include mobile {
+            display: flex;
+            align-items: center;
+            padding-right: 67rem;
+            column-gap: rem(30);
+            will-change: transform;
+            animation-name: autoRun;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            @include mobile-s {
+                padding-right: 62rem;
+            }
+        }
+
+        &:not(.basic) {
+            flex: 0 0 100%;
+
+            @include mobile-above {
+                display: none;
+            }
+        }
+    }
+     @keyframes autoRun {
+        100% {
+        transform: translateX(-100%);
+        }
+    }
+    &__item {
+        display: flex;
+        min-width: fit-content;
+        justify-content: start;
+        align-items: center;
+        column-gap: rem(16);
+  }
+
+    &__image {
+        padding: rem(16);
+        width: 25%;
+        background: rgba(0, 178, 7, 0.10);
+        border-radius: 50%;
+        border: none;
+
+        @include laptop {
+            width: rem(68);
+            height: rem(68);
+        }
+
+        
+    }
+
+    &__title {
+         @include laptop {
+                @include fluid-text(32 , 16)
+            }
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        color: var(--color-gray-500);
+         @include laptop {
+                @include fluid-text(26 , 14)
+            }
+    }
+}

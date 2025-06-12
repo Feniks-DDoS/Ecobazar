@@ -7,6 +7,10 @@
         align-items: center;
         justify-content: center;
         column-gap: rem(8);
+
+        &--light {
+            color: var(--color-light);
+        }
     }
 
     &__item {

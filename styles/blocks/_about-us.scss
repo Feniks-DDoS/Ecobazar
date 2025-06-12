@@ -1,0 +1,96 @@
+@use '../helpers' as *; 
+
+
+.about-us {
+
+    padding-top: rem(80);
+
+    &__body {
+        display: grid;
+        row-gap: rem(80);
+        overflow: hidden;
+
+        @include laptop {
+            row-gap: rem(50);
+        }
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        column-gap: rem(60);
+
+        @include laptop {
+            grid-template-columns: 1fr;
+            column-gap: rem(0);
+            row-gap: rem(20);
+        }
+
+        &-title {
+            line-height: 1.2;
+        }
+
+        &-description {
+            font-weight: 400;
+            color: var(--color-gray-600);
+        }
+
+        &-main {
+            display: grid;
+            row-gap: rem(24);
+            &--reverse {
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+            }
+
+            &--end {
+
+                @include laptop {
+
+                grid-area: 1 / 1 / 2 / 2;
+                }
+                padding-bottom: rem(20);
+            }
+        }
+
+        &-image {
+            border-radius: rem(10);
+        }
+
+        &-image-wrapper {
+            width: 100%;
+
+            &--end {
+                align-self: end;
+                @include laptop {
+                grid-area: 1 / 1 / 2 / 2;
+                z-index: -1;
+                display: flex;
+                justify-content: end;
+                @include mobile-s {
+                    display: none;
+                }
+                }
+            }
+            &--center {
+                position: relative;
+
+                &::before {
+                    @include abs-y;
+                    content: "";
+                    inset: 0;
+                    z-index: -1;
+                    width: rem(716);
+                    height: rem(492);
+                    border-radius: rem(10);
+                    background: url(../../images/about/2.jpg) center/cover no-repeat;
+                }
+
+                @include laptop {
+                    display: none;
+                }
+            }
+        }
+    }
+}

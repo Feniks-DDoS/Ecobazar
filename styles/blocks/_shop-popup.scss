@@ -13,7 +13,7 @@
     background-color: rgba(0 ,0 , 0 , 0.7);
     transition: var(--transition-duration);
 
-     &:not(.is-active) {
+     &:not([open]) {
             @include hide;
 
             transform: translateX(100%);

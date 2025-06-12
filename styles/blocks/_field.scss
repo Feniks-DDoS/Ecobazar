@@ -93,9 +93,20 @@
             &-control {
             border: var(--border);
 
+            @include hover {
+                &::placeholder {
+                    @include show;
+                }
+                box-shadow: inset rem(1) rem(1) rem(1) rem(1) rgba(0, 0 ,0 ,0.2); 
+            }
+
          
             &:focus-visible {
                 border: rem(2) solid var(--color-primary);
+                &::placeholder {
+                    @include show;
+                }
+                box-shadow: inset rem(1) rem(1) rem(1) rem(1) rgba(0, 0 ,0 ,0.2);
             }
 
             &:user-invalid {
@@ -107,17 +118,25 @@
                 font-weight: 400;
                 line-height: 1.4;
                 font-size: rem(15);
+                @include hide;
+                transition: var(--transition-duration);
             }
 
             &--header {
                 border-radius: rem(6);
-                padding: rem(13) rem(18);
+                padding-block: rem(13);
+                padding-left: rem(30);
                 min-width: rem(400);
 
                 @include tablet {
                     min-width: 90dvw;
                 }
             }
+            }
+
+            &-search-icon {
+                @include abs-y;
+                left: 2%;
             }
 
         &-button {
