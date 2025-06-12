@@ -10,11 +10,10 @@ class ShopPopup {
     }
 
     stateClasses = {
-        isActive: 'is-active',
         isLock: 'is-lock',
      }
 
-         constructor(rootElement) {
+    constructor(rootElement) {
     this.rootElement = rootElement
     this.openShopPopupElement = document.querySelector(this.selectors.openShopPopup)
     this.closeShopPopupElement = this.rootElement.querySelector(this.selectors.closeShopPopup)
@@ -28,7 +27,7 @@ class ShopPopup {
 
         if(!isOpenButtonElement) return
 
-        this.rootElement.classList.add(this.stateClasses.isActive)
+        this.rootElement.showModal()
         document.documentElement.classList.add(this.stateClasses.isLock)
     }
 
@@ -38,13 +37,26 @@ class ShopPopup {
 
         if(!isCloseButtonElement) return
 
-        this.rootElement.classList.remove(this.stateClasses.isActive)
+        this.rootElement.close()
         document.documentElement.classList.remove(this.stateClasses.isLock)
+    }
+
+    onKeyDown = (event) => {
+        const { code , target} = event
+
+        const enterKeyDown = code === 'Enter'
+
+        if(enterKeyDown && this.rootElement.open && target === this.closeShopPopupElement) {
+            this.rootElement.close()
+            document.documentElement.classList.remove(this.stateClasses.isLock)
+        } 
+
     }
 
   bindEvents() {
     this.openShopPopupElement.addEventListener('click', (event) => this.onOpenPopupClick(event))
     this.closeShopPopupElement.addEventListener('click', (event) => this.onClosePopupClick(event))
+    this.rootElement.addEventListener('keydown' , this.onKeyDown)
 }
 }
 

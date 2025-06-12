@@ -24,7 +24,7 @@ class Newsletter {
     }
 
     loadStorage() {
-        return localStorage.getItem('Dont-Show-Again') === 'true'     
+        return localStorage.getItem('Dont-Show-Again')
     }
 
     saveData() {
@@ -38,6 +38,10 @@ class Newsletter {
         if(!isDontShowAgain) return
 
         this.saveData()
+
+        this.rootElement.close()
+        document.documentElement.classList.remove(this.stateClasses.isLock)
+
     }
 
     isActive() {
@@ -45,24 +49,43 @@ class Newsletter {
         if(this.safeData) return
 
         setTimeout(() => {
-            this.rootElement.classList.add(this.stateClasses.isActive)
+            this.rootElement.showModal()
             document.documentElement.classList.add(this.stateClasses.isLock)
         }, 2000)
     }
 
     onCloseClick(event) {
-        const isCloseButton = event.target.matches(this.selectors.closeButton)
+        const isCloseButton = event.currentTarget
 
         if(!isCloseButton) return
 
-    
-        this.rootElement.classList.remove(this.stateClasses.isActive)
+        this.rootElement.close()
         document.documentElement.classList.remove(this.stateClasses.isLock)
+    }
+
+    onKeyDown(event)  {
+        const { code , target } = event
+
+        const isEnterKey = code === 'Enter'
+
+        if(isEnterKey && this.rootElement.open && target === this.closeButtonElement) {
+            this.rootElement.close()
+            document.documentElement.classList.remove(this.stateClasses.isLock)
+        }
+
+        if(isEnterKey && this.rootElement.open && target === this.dontShowAgainElement) {
+            
+        this.saveData()
+
+        this.rootElement.close()
+        document.documentElement.classList.remove(this.stateClasses.isLock)
+        }
     }
 
     bindEvents() {
         this.closeButtonElement.addEventListener('click' , (event) => this.onCloseClick(event))
         this.dontShowAgainElement.addEventListener('click' , (event) => this.onDontShowAgainClick(event))
+        this.rootElement.addEventListener('keydown' , (event) => this.onKeyDown(event))
     }
 
 }

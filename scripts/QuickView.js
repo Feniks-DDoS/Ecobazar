@@ -67,13 +67,13 @@ class QuickView {
         const html =  `
 
     <div class="quick-view__inner">
-        <form class="quick-view__close-button-wrapper" method="dialog">
+        <form class="quick-view__close-button-wrapper" method="dialog" data-js-quick-view-close-button>
             <button 
             class="quick-view__burger-button is-active" 
             type="button"
             >
             <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" 
-            data-js-quick-view-close-button>
+            >
             <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -392,9 +392,20 @@ class QuickView {
         if(isNaN(id)) return
 
         this.quickViewProduct(id)
-        this.quickViewElement.classList.add(this.stateClasses.isActive)
+        this.quickViewElement.showModal()
         document.documentElement.classList.add(this.stateClasses.isLock)
 
+    }
+
+    onKeyDown(event) {
+        const { code , target } = event
+
+        const isEnterKey = code === 'Enter'
+        
+        if(isEnterKey && this.quickViewElement.open && target === this.closeButtonElement) {
+            this.quickViewElement.close()
+            document.documentElement.classList.remove(this.stateClasses.isLock)
+        }
     }
     bindEvents() {
         this.openButtonElements.forEach(button => {
@@ -411,10 +422,12 @@ class QuickView {
         
             if (this.closeButtonElement) {
                 this.closeButtonElement.addEventListener('click',  () => {
-                    this.quickViewElement.classList.remove(this.stateClasses.isActive)
+                    this.quickViewElement.close()
                     document.documentElement.classList.remove(this.stateClasses.isLock)
                 })
             }
+
+            this.rootElement.addEventListener('keydown' , (event) => this.onKeyDown(event))
     }
 
 }

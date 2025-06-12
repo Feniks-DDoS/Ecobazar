@@ -188,7 +188,7 @@ class ShopCart {
         this.renderCheckout()
         this.render()
         this.updateAllPrice()
-        
+
         this.removeFromShopCartMessage()
     }
 
@@ -203,13 +203,13 @@ class ShopCart {
         this.renderCheckout()
         this.render()
         this.updateAllPrice()
-        
+
         this.removeFromShopCartMessage()
     }
 
 
     removeFromShopCartMessage() {
-        this.removeFromShopCartMessageElement.classList.add(this.stateClasses.isActive)
+        this.removeFromShopCartMessageElement.classList.add(this.stateClasses.isActive)  
 
         setTimeout(() => {
             this.removeFromShopCartMessageElement.classList.remove(this.stateClasses.isActive)
@@ -217,7 +217,7 @@ class ShopCart {
     }
 
     addToShopCartTwoTimeMessage() {
-        this.addToShopCartTwoTimeMessageElement.classList.add(this.stateClasses.isActive)       
+        this.addToShopCartTwoTimeMessageElement.classList.add(this.stateClasses.isActive)   
 
          setTimeout(() => {
             this.addToShopCartTwoTimeMessageElement.classList.remove(this.stateClasses.isActive)
@@ -226,8 +226,7 @@ class ShopCart {
 
 
     addToShopCartMessage() {
-        this.addToShopCartMessageElement.classList.add(this.stateClasses.isActive)       
-
+        this.addToShopCartMessageElement.classList.add(this.stateClasses.isActive)
          setTimeout(() => {
             this.addToShopCartMessageElement.classList.remove(this.stateClasses.isActive)
         }, 1800)

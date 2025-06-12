@@ -15,6 +15,8 @@ import RangePriceCollection from "./RangePrice.js";
 import ShowFilterCollection from "./ShowFilter.js";
 import ExpandapleContentCollection from "./ExpandableContent.js";
 import TabsCollection from "./Tabs.js";
+import TeamCollection from "./Team.js";
+import ShopSliderCollection from "./ShopSlider.js";
 import VideoPlayerCollection from "./Video.js";
 import ShopCartCollection from "./ShopCart.js";
 
@@ -40,7 +42,11 @@ new RangePriceCollection()
 
 new ChangeImageCollection()
 
+new ShopSliderCollection()
+
 new WishlistColletion()
+
+new TeamCollection()
 
 new ExpandapleContentCollection()
 
