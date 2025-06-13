@@ -19,15 +19,16 @@
 
 
         &-item {
-            width: 7%;
-            padding: rem(5);
-
-            @include laptop {
-                width: 5%;
-            }
+            width: rem(64);
+            height: rem(50);
+            padding: rem(8);
 
             @include mobile {
-                width: 7%;
+                padding: rem(5);
+                width: rem(54);
+            }
+
+            @include mobile-s {
                 padding: rem(0);
             }
         }

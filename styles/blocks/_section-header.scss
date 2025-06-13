@@ -46,6 +46,10 @@
             font-size: rem(16);
             font-weight: 400;
             color: var(--color-gray-600);
+
+            @include tablet {
+                padding-bottom: 1rem;
+            }
         }
 
         &-link {

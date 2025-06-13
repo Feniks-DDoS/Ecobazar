@@ -11,6 +11,11 @@
         &--light {
             color: var(--color-light);
         }
+
+        &--dark {
+            color: var(--color-dark);
+            align-items: start;
+        }
     }
 
     &__item {

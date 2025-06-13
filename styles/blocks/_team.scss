@@ -40,6 +40,7 @@
         background-color: var(--color-light);
         border-radius: rem(10);
         border: rem(1) solid #E6E6E6;
+        transition: var(--transition-duration);
 
         opacity: 0;  
         visibility: hidden;
@@ -51,6 +52,11 @@
              visibility: visible;
              position: relative;
             pointer-events: auto;
+        }
+
+        @include hover {
+            
+            box-shadow: 0px 20px 48px 0px rgba(0, 38, 3, 0.08);
         }
     }
 

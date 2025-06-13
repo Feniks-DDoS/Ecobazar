@@ -41,6 +41,11 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: rem(8);
             }
+
+            @include mobile {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
         }
 
         &-4-cols {

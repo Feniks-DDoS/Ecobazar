@@ -299,4 +299,28 @@
             }
         }
     }
+
+    &__contact {
+        padding-inline: rem(50);
+        padding-bottom: rem(50);
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        gap: rem(16);
+
+        @include laptop {
+        padding-inline: rem(25);
+        padding-bottom: rem(25);
+        }
+
+        @include mobile {
+        padding-inline: rem(12);
+        padding-bottom: rem(12);
+        grid-template-columns: 1fr;
+        gap: rem(8);
+        }
+
+        &-button {
+            border: none;
+        }
+    }
 }
