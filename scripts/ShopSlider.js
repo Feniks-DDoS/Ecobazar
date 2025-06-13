@@ -30,6 +30,7 @@ class ShopSlider {
         this.setActiveButton(this.currentPage);
         this.updateArrowState();
     }
+
     showPage(pageNumber) {
         const start = (pageNumber - 1) * this.itemsPerPage
         const end = start + this.itemsPerPage
@@ -44,6 +45,8 @@ class ShopSlider {
         this.showPage(this.currentPage)
         this.setActiveButton(this.currentPage)
         this.updateArrowState()
+
+        window.scroll({top: 200 , behavior: 'smooth'})
     }
 
     setActiveButton(pageNumber) {
@@ -57,6 +60,7 @@ class ShopSlider {
             this.showPage(this.currentPage)
             this.setActiveButton(this.currentPage)
             this.updateArrowState()
+        window.scroll({top: 200 , behavior: 'smooth'})
         }
     }
 
@@ -66,6 +70,7 @@ class ShopSlider {
             this.showPage(this.currentPage)
             this.setActiveButton(this.currentPage)
             this.updateArrowState()
+        window.scroll({top: 200 , behavior: 'smooth'})
 
         }
     }
