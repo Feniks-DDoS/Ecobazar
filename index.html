@@ -199,10 +199,10 @@
                             <a href="./shop.html" class="header__menu-link ">Shop</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link ">Pages</a>
+                            <a href="./SinglePageBlog.html" class="header__menu-link ">Pages</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link ">Blog</a>
+                            <a href="./blog.html" class="header__menu-link ">Blog</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="./about.html" class="header__menu-link ">About Us</a>
@@ -311,10 +311,10 @@
                             <a href="./shop.html" class="header__menu-link ">Shop</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link ">Pages</a>
+                            <a href="./SinglePageBlog.html" class="header__menu-link ">Pages</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link ">Blog</a>
+                            <a href="./blog.html" class="header__menu-link ">Blog</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="./about.html" class="header__menu-link ">About Us</a>
@@ -2418,7 +2418,7 @@
             <header class="section__header">
                 <div class="section__header-inner container">
                     <div class="section__header-info">
-                        <h2 class="section__header-title h6" id="popular-title">Featured Products</h2>
+                        <h2 class="section__header-title h6" id="featured-products-title">Featured Products</h2>
                         <a href="./shop.html" class="section__header-link">View All</a>
                     </div>
                 </div>
@@ -3922,6 +3922,16 @@
 
     <dialog class="newsletter" data-js-newsletter>
         <div class="newsletter__inner">
+                    <div class="newsletter__body-promo">
+                     <form class="shop-popup__header-close-button-wrapper" method="dialog" data-js-news-letter-close-button>
+                        <button class="button shop-popup__header-button " type="button">
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                    >
+                    <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></button>
+                    </form>
+                    </div>
             <header class="newsletter__header">
                 <div class="newsletter__header-inner">
                     <img 
@@ -3936,16 +3946,6 @@
             </header>
             <div class="newsletter__body">
                 <div class="newsletter__body-inner">
-                    <div class="newsletter__body-promo">
-                     <form class="shop-popup__header-close-button-wrapper" method="dialog" data-js-news-letter-close-button>
-                        <button class="button shop-popup__header-button " type="button">
-                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" 
-                    >
-                    <path d="M28.75 16.25L16.25 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M16.25 16.25L28.75 28.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg></button>
-                    </form>
-                    </div>
                     <div class="newsletter__body-header">
                         <h2 class="newsletter__body-title h4">Subcribe to Our Newsletter</h2>
                         <div class="newsletter__body-description">
@@ -3987,36 +3987,28 @@
         </div>
     </dialog>
 
-    <dialog class="add-to-cart" data-js-add-to-cart-message>
+    <div class="add-to-cart" data-js-add-to-cart-message>
         <div class="add-to-cart__inner">
             <div class="add-to-cart__body">
                 <p class="add-to-cart__title">Product added to shop cart</p>
             </div>
         </div>
-    </dialog>
+    </div>
     
-    <dialog class="add-to-cart" data-js-add-to-wishlist-message>
+    <div class="add-to-cart" data-js-add-to-wishlist-message>
         <div class="add-to-cart__inner">
             <div class="add-to-cart__body">
                 <p class="add-to-cart__title">Product added to wishlist</p>
             </div>
         </div>
-    </dialog>
+    </div>
 
-    <dialog class="add-to-cart" data-js-remove-from-cart-message>
-        <div class="add-to-cart__inner">
-            <div class="add-to-cart__body">
-                <p class="add-to-cart__title">Product removed</p>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog class="add-to-cart" data-js-again-add-to-cart-message>
+    <div class="add-to-cart" data-js-again-add-to-cart-message>
         <div class="add-to-cart__inner">
             <div class="add-to-cart__body">
                 <p class="add-to-cart__title">Product quantity increased in shop cart</p>
             </div>
         </div>
-    </dialog>
+    </div>
 </body>
 </html>
