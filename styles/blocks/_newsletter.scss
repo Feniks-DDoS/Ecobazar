@@ -2,21 +2,21 @@
 
 
 .newsletter {
-      position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    padding: rem(100);
-    inset: 0;
-    min-height: 100dvh;
-    min-width: 100dvw;
-    background-color: rgba(0 ,0 , 0 , 0.7);
     transition: var(--transition-duration);
+    border: none;
+    border-radius: rem(8);
+
+    &::backdrop {
+    background: rgba(0 ,0 , 0 , 0.7);
+    transition: var(--transition-duration);
+    }
+
 
     &:not([open]) {
         @include hide;
-        transform: translateY(100%);
     }
 
     @include tablet {
@@ -30,9 +30,12 @@
         }
     }
 
+    
+        @include tablet {
+            background: url(../../images/hero/2.jpg) center/cover no-repeat;
+        }
 
     &__inner {
-        padding: rem(10);
         background-color: var(--color-light);
         border-radius: rem(8);
         display: flex;
@@ -40,15 +43,8 @@
         align-items: center;
         column-gap: rem(40);
         position: relative;
+        background-color: transparent;
 
-        @include tablet {
-            background: url(../../images/hero/2.jpg) center/cover no-repeat;
-        }
-
-        
-        @include mobile-s {
-            min-height: 70dvh;
-        }
     }
 
     &__header {
@@ -76,21 +72,10 @@
 
         &-promo {
             position: absolute;
-            top: -20%;
+            top: 0%;
             right: 0;
             content: "";
-
-            @include laptop {
-                top: -10%;
-            }
-
-            @include tablet {
-                top: 0;
-            }
-            
-             @include mobile-s {
-            top: -10%;
-        }
+            z-index: 200;
         }
 
         &-header {

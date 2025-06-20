@@ -112,7 +112,12 @@
 
     }
 
+    &__extra {
+        background-color: #F7F7F7;
+    }
+
     &__map {
+        border: none;
         @include mobile {
             height: 300px;
         }

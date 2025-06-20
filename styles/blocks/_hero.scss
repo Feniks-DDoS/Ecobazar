@@ -44,14 +44,17 @@
         padding-inline: rem(40);
         border-radius: rem(8);
         box-shadow: 0px 8px 40px 0px rgba(0, 38, 3, 0.08);
+        margin-bottom: rem(60);
 
         @include tablet {
             grid-template-columns: repeat(2 , 1fr);
             row-gap: 1rem;
+            margin-bottom: rem(30);
         }
 
         @include mobile {
             grid-template-columns: 1fr;
+            margin-bottom: rem(15);
         }
 
 

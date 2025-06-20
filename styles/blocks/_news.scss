@@ -9,6 +9,12 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: rem(24);
 
+    &--2-cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(24);
+    }
+
     
     @include laptop {
         grid-template-columns: repeat(2,1fr);
@@ -41,10 +47,12 @@
     &-card {
         &__body {
             position: relative;
+            min-width: 100%;
         }
         &__image {
             border-top-left-radius: rem(10);
             border-top-right-radius: rem(10);
+            min-width: 100%;
 
             @include laptop {
                 width: 100%;

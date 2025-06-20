@@ -4,18 +4,22 @@
 .add-to-cart {
 
     &:not(.is-active) {
-    transform: translateY(250%);
+    opacity: 0;
     transition: var(--transition-duration);
     }
 
     display: flex;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    background-color: transparent;
     border: none;
+    background-color: transparent;
+    width: 100%;
     transition: var(--transition-duration);
     z-index: 300;
+
+    &::backdrop {
+        background-color: transparent;
+    }
 
     &__inner {
         position: absolute;

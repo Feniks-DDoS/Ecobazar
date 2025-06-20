@@ -31,8 +31,11 @@
     &__title {
         &-span {
             text-align: end;
-            padding-left: rem(20);
             color: var(--color-gray-600);
         }
+    }
+
+    &__subtitle {
+        min-width: rem(112);
     }
 }

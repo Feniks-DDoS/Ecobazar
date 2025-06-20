@@ -1,23 +1,30 @@
 @use '../helpers' as *; 
 
 .shop-popup {
-    position: fixed;
     display: flex;
-    align-items: center;
-    justify-content: end;
-    z-index: 10;
-    inset: 0;
-    padding: 0;
-    min-height: 100dvh;
-    min-width: 100dvw;
-    background-color: rgba(0 ,0 , 0 , 0.7);
+    align-items: end;
+    justify-self: end;
+    margin: 0;
     transition: var(--transition-duration);
+    border: none;
+    min-height: 100dvh;
 
-     &:not([open]) {
-            @include hide;
+    &::backdrop {
+    background: var(--color-dark);                   
+    opacity: 0;   
+    transition-property: opacity;                        
+    transition-duration: var(--transition-duration);
+    }
 
-            transform: translateX(100%);
-        }
+    &[open]::backdrop {
+    opacity: 0.7;                         
+    }
+
+    &:not([open]) {
+        @include hide;
+
+        transform: translateX(100%);
+    }
 
     &__inner {
         min-width: rem(456);
@@ -34,7 +41,7 @@
     }
 
     &__header {
-
+        padding-top: rem(20);
         &-inner {
             display: flex;
             justify-content: space-between;

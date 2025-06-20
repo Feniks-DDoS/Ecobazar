@@ -2,24 +2,30 @@
 
 
 .quick-view {
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    padding: rem(100);
-    inset: 0;
-    min-height: 100dvh;
-    min-width: 100dvw;
-    background-color: rgba(0 ,0 , 0 , 0.7);
     transition: var(--transition-duration);
+    border: none;
+    border-radius: rem(8);
 
-        @include mobile {
-            padding: rem(30);
-        }
+      &::backdrop {
+    background: var(--color-dark);                   
+    opacity: 0;   
+    transition-property: opacity;                        
+    transition-duration: var(--transition-duration);
+    }
+
+    &[open]::backdrop {
+    opacity: 0.7;                         
+    }
 
         &:not([open]) {
             @include hide;
+        }
+
+        @include mobile {
+            padding: rem(30);
         }
 
     &__inner {
@@ -51,17 +57,21 @@
         @media (width <= rem(1200)) {
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
         }
     }
 
     &__close-button-wrapper {
         position: absolute;
         content: "";
-        top: -8%;
+        top: 0%;
         right: 0;
         width: rem(45);
         height: rem(45);
+        
+       svg {
+        color: var(--color-dark);
+       } 
+        
 
         
         @media (width <= rem(1200)) {
@@ -129,6 +139,11 @@
             font-weight: 400;
         }
 
+        &-title {
+            @include mobile-s {
+                align-self: flex-start;
+            }
+        }
 
         &--red {
             padding: rem(3) rem(10);

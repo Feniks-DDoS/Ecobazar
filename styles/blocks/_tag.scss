@@ -8,6 +8,10 @@
     column-gap: rem(16);
     padding-bottom: rem(8);
 
+    &--blog {
+        justify-content: start;
+    }
+
     @include laptop {
         column-gap: rem(8);
     }

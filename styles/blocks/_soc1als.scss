@@ -2,6 +2,10 @@
 
 .soc1als {
 
+    &--blog {
+        justify-self: end;
+    }
+
     &__list {
         display: flex;
         align-items: center;
