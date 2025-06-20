@@ -37,9 +37,10 @@ class FormValidate {
             if(error[erorrType]) {
                  errorMessages.push(getMessage(fieldControlElement))
             } 
-        })
+        }) 
 
         this.manageErorrs(fieldControlElement , errorMessages)
+
 
         const isValid = errorMessages.length === 0
 
@@ -54,10 +55,9 @@ class FormValidate {
         const isFormElement = target.closest(this.selectors.form)
         const isRequired = target.required
 
-        if(isFormElement && isRequired) {
+        if(isFormElement && isRequired && target.value.trim() !== '') {
             this.validate(target)
         }
-
     }
 
     onChange(event) {
@@ -68,6 +68,8 @@ class FormValidate {
         const isToggleType = ['checkbox' , 'radio'].includes(target.type)
 
         if(isToggleType && isRequired) {
+            this.validate(target)
+        }else if(isRequired && target.value.trim() !== '') {
             this.validate(target)
         }
 

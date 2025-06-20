@@ -24,7 +24,7 @@ class Wishlist  {
         this.redIconWishlistElement = this.rootElement.querySelector(this.selectors.redIconWishlist)
         this.addToWishlistMessageElement = this.rootElement.querySelector(this.selectors.addToWishlistMessage)
         this.removeFromWishlistMessageElement = this.rootElement.querySelector(this.selectors.removeFromWishlistMessage)
-        this.addToWishlistButtonElement = this.rootElement.querySelector('section__popular-card')
+        this.addToWishlistButtonElement = this.rootElement.querySelector('.section__popular-card')
 
         this.wishlist = this.loadStorage()
         this.render()
@@ -123,7 +123,7 @@ class Wishlist  {
                     <p class="wishlist__body-status-info card card-small card-small--green">${product.status}</p>
                 </td>
                 <td class="wishlist__body-actions">
-                    <button 
+                    <button  
                     class="wishlist__body-button button button--green"
                         >Add to Cart</button>
                     <button 
@@ -151,6 +151,7 @@ class Wishlist  {
     this.removeFromWishlistElements.forEach((element) => {
         element.addEventListener('click', (event) => this.onRemoveClick(event))
     })
+
     }
 
     onRemoveClick(event) {

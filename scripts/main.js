@@ -19,6 +19,7 @@ import TeamCollection from "./Team.js";
 import ShopSliderCollection from "./ShopSlider.js";
 import VideoPlayerCollection from "./Video.js";
 import ShopCartCollection from "./ShopCart.js";
+import BlogSliderCollection from "./Blog.js";
 
 new NewsletterCollection()
 
@@ -47,6 +48,8 @@ new ShopSliderCollection()
 new WishlistColletion()
 
 new TeamCollection()
+
+new BlogSliderCollection()
 
 new ExpandapleContentCollection()
 

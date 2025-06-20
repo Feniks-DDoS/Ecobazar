@@ -209,7 +209,9 @@ class ShopCart {
 
 
     removeFromShopCartMessage() {
-        this.removeFromShopCartMessageElement.classList.add(this.stateClasses.isActive)  
+
+        if(!this.removeFromShopCartMessageElement) return
+        this.removeFromShopCartMessageElement.classList.add(this.stateClasses.isActive)
 
         setTimeout(() => {
             this.removeFromShopCartMessageElement.classList.remove(this.stateClasses.isActive)
@@ -217,7 +219,7 @@ class ShopCart {
     }
 
     addToShopCartTwoTimeMessage() {
-        this.addToShopCartTwoTimeMessageElement.classList.add(this.stateClasses.isActive)   
+        this.addToShopCartTwoTimeMessageElement.classList.add(this.stateClasses.isActive)
 
          setTimeout(() => {
             this.addToShopCartTwoTimeMessageElement.classList.remove(this.stateClasses.isActive)

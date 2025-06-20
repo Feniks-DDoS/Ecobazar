@@ -407,6 +407,7 @@ class QuickView {
             document.documentElement.classList.remove(this.stateClasses.isLock)
         }
     }
+
     bindEvents() {
         this.openButtonElements.forEach(button => {
             button.addEventListener('click', (event) => {
@@ -420,14 +421,19 @@ class QuickView {
 
         this.closeButtonElement = this.quickViewElement.querySelector(this.selectors.closeButton)
         
-            if (this.closeButtonElement) {
-                this.closeButtonElement.addEventListener('click',  () => {
-                    this.quickViewElement.close()
-                    document.documentElement.classList.remove(this.stateClasses.isLock)
-                })
-            }
+        if (this.closeButtonElement) {
+            this.closeButtonElement.addEventListener('click',  () => {
+                this.quickViewElement.close()
+                document.documentElement.classList.remove(this.stateClasses.isLock)
+            })
+        }
 
-            this.rootElement.addEventListener('keydown' , (event) => this.onKeyDown(event))
+        this.rootElement.addEventListener('keydown' , (event) => this.onKeyDown(event))
+        this.quickViewElement.addEventListener('click' , (event) => {
+            if(event.target === this.quickViewElement) {
+                this.quickViewElement.close()
+            }
+        })
     }
 
 }

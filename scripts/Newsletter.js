@@ -86,6 +86,11 @@ class Newsletter {
         this.closeButtonElement.addEventListener('click' , (event) => this.onCloseClick(event))
         this.dontShowAgainElement.addEventListener('click' , (event) => this.onDontShowAgainClick(event))
         this.rootElement.addEventListener('keydown' , (event) => this.onKeyDown(event))
+        this.rootElement.addEventListener('click', (event) => {
+            if(event.target === this.rootElement) {
+                this.rootElement.close()
+            }
+        })
     }
 
 }
