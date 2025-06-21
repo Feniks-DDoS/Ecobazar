@@ -700,8 +700,320 @@
                             </div>
                         </div>
                     </div>
-                    <div class="single-blog__body-main"></div>
-                    <div class="single-blog__body-extra"></div>
+                    <div class="single-blog__body-main">
+                        <h3 class="single-blog__title p20">Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.</h3>
+                        <div class="single-blog__description">
+                            <p>
+                                Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.
+                            </p>
+                            <p>
+                                Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.
+                                Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.
+                            </p>
+                        </div>
+                        <div class="single-blog__images">
+                            <img 
+                            src="./images/news/1.jpg" 
+                            alt=""
+                            width="424"
+                            height="356"
+                            loading="lazy" 
+                            class="single-blog__description-image">
+                            <img 
+                            src="./images/news/2.jpg" 
+                            alt=""
+                            width="424"
+                            height="356"
+                            loading="lazy" 
+                            class="single-blog__description-image">
+                        </div>
+                        <div class="single-blog__description">
+                            <p>
+                                Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies.
+                            </p>
+                        </div>
+                        <div class="single-blog__banner banner">
+                            <div class="banner__inner">
+                                <div class="banner__info">
+                                    <p class="banner__subtitle">Summer Sales</p>
+                                    <h4 class="banner__title h5">Fresh Fruit</h4>
+                                    <a href="./shop.html" class="banner__button button button--green">Shop Now</a>
+                                </div>
+                                <div class="banner__description">
+                                    <div class="banner__description-info">
+                                        <span>up to</span>
+                                        <h5 class="banner__description-title p24">56%</h5>
+                                        <span>Off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-blog__body-extra">                  
+                    <div class="contact__body contact__body--blog">
+                        <div class="contact__info">
+                        <h2 class="contact__title contact__title--blog p24">Leave a Comment</h2>
+                        </div>
+                        <form action="/" data-js-form novalidate class="field field__contact">
+                            <div class="order__form-cell field">
+                                <label for="FullName" class="field__label ">Full Name <span class="field__reguired-star" aria-hidden="true">*</span></label>
+                                <input 
+                                class="field__control"
+                                id="FullName"
+                                required
+                                placeholder="Zakir Hossen"
+                                >
+                                    <span class="field__errors" id="email-errors" data-js-form-errors></span> 
+                            </div>
+                            <div class="order__form-cell field">
+                                    <label for="ContactEmail" class="field__label ">Email <span class="field__reguired-star" aria-hidden="true">*</span></label>
+                                    <input  
+                                    id="ContactEmail" 
+                                    class="field__control" 
+                                    placeholder="zakirsoft@gmail.com"
+                                    required
+                                    type="email"
+                                    aria-errormessage="ContactEmail-errors"
+                                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                                    title="
+                                        Incorrect value: 
+                                        Example: zakirsoft@gmail.com"
+                                    />
+                                    <span class="field__errors" id="ContactEmail-errors" data-js-form-errors></span>    
+                            </div>
+                            <div class="order__form-cell order__form-cell--wide  field">
+                                <div class="order__form-additional-wrapper">
+                                    <h3 class="order__form-additional-title p24 visually-hidden">Message</h3>
+                                    <div class="order__form-additional-info">
+                                        <label for="UserMessage" class="field__label" aria-hidden="true">Message <span class="field__reguired-star" aria-hidden="true">*</span></label>
+                                        <textarea id="UserMessage" required class="field__textarea" placeholder="Write your comment here…"></textarea>                                    
+                                    <span class="field__errors" id="ContactEmail-errors" data-js-form-errors></span>    
+                                    </div>
+                                </div>
+                            </div>                        
+                            <div class="order__form-cell order__form-cell--wide field">
+                                <div class="order__form-actions">
+                                    <div class="order__form-aqreement">
+                                        <label for="SaveMessage" class="checkbox checkbox__transparent checkbox__transparent--blog">
+                                            <input type="checkbox" id="SaveMessage" aria-errormessage="agreement-errors" class="checkbox__input checkbox__input-transparent" required>
+                                            <span class="checkbox__label">Save my name and email in this browser for the next time I comment.</span>
+                                            <span class="field__errors" id="agreement-errors" data-js-form-errors></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order__form-cell order__form-cell--wide field">
+                                <button type="submit" class="button button--green field__contact-button">Post Comments</button>
+                            </div>
+                        </form>
+                    </div>
+                    <article class="product-feedback product-feedback--blog" data-js-tabs>
+                        <div class="product-feedback__body" >
+                            <h3 class="single-blog__comments-title p24">Comments</h3>
+                            <ul class="product-feedback__list" data-js-expandable-content>
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                                    <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p>In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                            <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p>Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to "bolt" or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                            <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p> Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                            <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p>200+ Canton Pak Choi Bok Choy Chinese Cabbage Seeds Heirloom Non-GMO Productive Brassica rapa VAR. chinensis, a.k.a. Canton's Choice, Bok Choi, from USA</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                            <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p>Duis at ullamcorper nulla, eu dictum eros.</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                            <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p>Duis at ullamcorper nulla, eu dictum eros.</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                                    <div class="product-feedback__card">
+                                        <div class="product-feedback__card-header">
+                                            <div class="feedback__card-person person person__product-feedback">
+                                                <div class="person__header-body">
+                                                <img 
+                                                src="./images/person/1.jpg" 
+                                                alt="" 
+                                                class="person__image"
+                                                width="56"
+                                                height="56"
+                                                loading="lazy"
+                                                />
+                                                <div class="person__info">
+                                                    <h3 class="person__title p16">Robert Fox</h3>
+                                            <div class="product-feedback__time"><time datetime="2025.02.02">2 min ago</time></div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-feedback__card-body">
+                                                <div class="product-feedback__card-description">
+                                                    <p>Duis at ullamcorper nulla, eu dictum eros.</p>
+                                                </div>
+                                            </div>
+                                        </div>                                                    
+                                    </div>
+                                </li> 
+                                <li class="product-feedback__item">
+                            <button 
+                            data-js-close-expandable-content
+                            class="product-feedback__button product-feedback__button--transparent button ">Close Comments</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-feedback__extra">
+                            <button
+                            data-js-open-expandable-content
+                                class="product-feedback__button product-feedback__button--transparent button ">Load More</button>
+                        </div>
+                    </article>                    
+                    </div>
                 </div>                
                  <aside class="product-listing__filters hidden-laptop">
                     <div class="filters blog__filters">

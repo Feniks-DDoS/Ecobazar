@@ -89,6 +89,7 @@ class Newsletter {
         this.rootElement.addEventListener('click', (event) => {
             if(event.target === this.rootElement) {
                 this.rootElement.close()
+                document.documentElement.classList.remove(this.stateClasses.isLock)
             }
         })
     }
