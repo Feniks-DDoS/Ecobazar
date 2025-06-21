@@ -4,6 +4,10 @@
 .product-feedback {
 
 
+    &--blog {
+        padding-top: rem(40);
+    }
+
     &__list {
         display: flex;
         flex-direction: column;
@@ -46,6 +50,17 @@
 
         &.is-close {
             display: none;
+        }
+
+        &--transparent {
+            border: rem(2) solid var(--color-primary);
+            padding: rem(14) rem(32);
+            background-color: transparent;
+
+            @include hover {
+                color: var(--color-hard-primary);
+                border-color: var(--color-hard-primary);
+            }
         }
     }
 

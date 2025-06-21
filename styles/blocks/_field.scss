@@ -46,6 +46,12 @@
             font-weight: 400;
         }
 
+        &__textarea {
+            &:user-invalid {
+                border: rem(2) solid var(--color-red);
+            }
+        }
+
         &__body {
             
     min-width: 100%;
@@ -259,7 +265,7 @@
             }
 
             @include mobile {
-                min-width: 90dvw;
+                min-width: 85dvw;
             }
 
             @include mobile-s {

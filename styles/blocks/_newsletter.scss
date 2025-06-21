@@ -8,6 +8,7 @@
     transition: var(--transition-duration);
     border: none;
     border-radius: rem(8);
+    overflow: hidden;
 
     &::backdrop {
     background: rgba(0 ,0 , 0 , 0.7);
@@ -76,6 +77,10 @@
             right: 0;
             content: "";
             z-index: 200;
+
+            @include mobile-s {
+                display: none;
+            }
         }
 
         &-header {

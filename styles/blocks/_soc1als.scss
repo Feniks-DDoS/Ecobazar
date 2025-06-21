@@ -4,6 +4,10 @@
 
     &--blog {
         justify-self: end;
+
+        @include mobile {
+            justify-self: start;
+        }
     }
 
     &__list {
